@@ -2,7 +2,7 @@ export default function Hotels() {
   const hotels = ["Hotel Taroa", "Hotel Guajira Real"];
 
   return (
-    <section>
+    <section className="text-center">
       <h2 className="text-xl font-bold">Hospedaje</h2>
       <ul>
         {hotels.map((h, i) => (

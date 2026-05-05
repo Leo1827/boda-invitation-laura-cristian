@@ -15,7 +15,7 @@ export default function Confirmation() {
   };
 
   return (
-    <section>
+    <section className="text-center">
       <input
         placeholder="Tu nombre"
         onChange={(e) => setName(e.target.value)}
