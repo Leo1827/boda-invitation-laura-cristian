@@ -25,7 +25,7 @@ export default function HeroEnvelope() {
         <p className="text-[#a66d4a] text-lg md:text-2xl italic font-light tracking-wide mb-6">
           Lo rumores son ciertos
         </p>
-        <h1 className="text-[#a66d4a] text-4xl md:text-4xl tracking-[0.2em] font-light uppercase">
+        <h1 className="text-[#a66d4a] text-3xl md:text-4xl tracking-[0.2em] font-light uppercase">
           ¡Nos Casamos!
         </h1>
       </header>
@@ -73,8 +73,8 @@ export default function HeroEnvelope() {
       </div>
 
       {/* SECCIÓN INFERIOR */}
-      <footer className="text-center mt-2">
-        <h2 className="text-[#a66d4a] text-3xl md:text-2xl tracking-[0.3em] font-light uppercase">
+      <footer className="text-center">
+        <h2 className="text-[#a66d4a] text-2xl md:text-2xl tracking-[0.3em] font-light uppercase">
           Laura & Cristian
         </h2>
       </footer>
