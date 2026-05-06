@@ -18,7 +18,7 @@ export default function Hero() {
 
       {/* Contenido de Texto */}
       <div className="text-white px-4 flex flex-col items-center">
-        <p className="font-[family-name:var(--font-pinyon)] italic text-xl md:text-4xl mb-4 drop-shadow-md">
+        <p className="font-[family-name:var(--font-pinyon)] italic text-4xl md:text-4xl mb-4 drop-shadow-md">
           Nuestra boda
         </p>
         
