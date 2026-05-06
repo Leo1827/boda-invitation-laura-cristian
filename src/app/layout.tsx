@@ -2,6 +2,7 @@
 import { Cormorant_Garamond } from "next/font/google";
 import "@/styles/globals.css";
 import type { Metadata } from "next";
+import PageTransition from "@/components/PageTransition";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -23,7 +24,10 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={cormorant.className + "italic"}>
-        {children}
+        
+        <PageTransition>
+          {children}
+        </PageTransition>
       </body>
     </html>
   );
