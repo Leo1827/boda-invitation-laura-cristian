@@ -29,6 +29,18 @@
   animation: floatEnvelope 4s ease-in-out infinite;
   filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.15));
   transition: filter 0.3s ease;
+  border-radius: 6px;
+  transition: transform 0.6s ease;
+}
+
+
+@keyframes envelopeFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
 }
 
 /* SOBRE */
@@ -55,6 +67,7 @@
   box-shadow: 
     inset 0 0 40px rgba(255,255,255,0.3), 
     inset 0 0 15px rgba(164, 129, 96, 0.2);
+  animation: envelopeFloat 3s ease-in-out infinite;
 }
 
 /* Triángulos con el mismo efecto de fibra */
@@ -84,6 +97,7 @@
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.2'/%3E%3C/svg%3E");
   background-blend-mode: multiply;
 }
+
 /* HEADER */
 .envelopeHeader {
   position: absolute;
@@ -169,6 +183,36 @@
   border-radius: 50%;
   opacity: .3;
   animation: shadow-lift 3s infinite;
+}
+
+
+/* animation sobre */
+
+@keyframes softPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.08);
+  }
+  60% {
+    transform: scale(1.08);
+  }
+}
+
+.sealPulse {
+  animation: softPulse 2.2s ease-in-out infinite;
+  transform-origin: center;
+}
+
+/* fin sello animation*/
+
+/* Para que cuando abra no se mueva de lugar, solo se desvanezca */
+.sealOpen {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(1.5);
+  pointer-events: none;
+  transition: all 0.7s ease;
 }
 
 /* keyframes EXACTOS */

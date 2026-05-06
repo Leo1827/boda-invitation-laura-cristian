@@ -52,7 +52,10 @@ export default function HeroEnvelope() {
             </svg>
 
             {/* SELLO PNG (Centrado en la unión) */}
-            <div className={`absolute top-1/2 pb-12 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[14] transition-all duration-700 ${open ? "opacity-0 scale-150 pointer-events-none" : "opacity-100"}`}>
+            <div className={`absolute top-1/2 pb-12 left-1/2 -translate-x-1/2 -translate-y-1/2 z-14 duration-700 
+                ${styles.sealPulse}
+                ${open ? "opacity-0 scale-150 pointer-events-none" : "opacity-100"}`}
+              >
               <img 
                 src="envelope/sello.png" // 👈 Cambia esto por la ruta de tu archivo
                 alt="Sello de boda"
@@ -74,7 +77,7 @@ export default function HeroEnvelope() {
 
       {/* SECCIÓN INFERIOR */}
       <footer className="text-center">
-        <h2 className="text-[#a66d4a] text-2xl md:text-2xl tracking-[0.3em] font-light uppercase">
+        <h2 className="text-[#a66d4a] text-2xl md:text-3xl md:pl-4 tracking-[0.3em] font-light uppercase">
           Laura & Cristian
         </h2>
       </footer>
