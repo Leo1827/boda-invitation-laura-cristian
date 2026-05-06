@@ -22,10 +22,10 @@ export default function HeroEnvelope() {
       
       {/* SECCIÓN SUPERIOR */}
       <header className="text-center animate-fade-in">
-        <p className="text-[#a66d4a] text-lg md:text-2xl italic font-light tracking-wide mb-6">
+        <p className="text-[#a66d4a] text-lg md:text-2xl italic tracking-wide mb-6">
           Lo rumores son ciertos
         </p>
-        <h1 className="text-[#a66d4a] text-3xl md:text-4xl tracking-[0.2em] font-light uppercase">
+        <h1 className="text-[#a66d4a] text-3xl md:text-4xl tracking-[0.2em] uppercase">
           ¡Nos Casamos!
         </h1>
       </header>
@@ -77,7 +77,7 @@ export default function HeroEnvelope() {
 
       {/* SECCIÓN INFERIOR */}
       <footer className="text-center">
-        <h2 className="text-[#a66d4a] text-2xl md:text-3xl md:pl-4 tracking-[0.3em] font-light uppercase">
+        <h2 className="text-[#a66d4a] text-2xl md:text-3xl md:pl-4 tracking-[0.3em] uppercase">
           Laura & Cristian
         </h2>
       </footer>

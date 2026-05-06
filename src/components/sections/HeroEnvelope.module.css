@@ -7,12 +7,9 @@
 
 /*Title sobre*/
 .initials {
-  font-family: "Great Vibes", cursive;
   font-size: 80px;
   fill: #ffffff; /* 👈 esto es clave en SVG */
-
   letter-spacing: 3px;
-
   filter: drop-shadow(0 2px 6px rgba(0,0,0,0.3));
 }
 
