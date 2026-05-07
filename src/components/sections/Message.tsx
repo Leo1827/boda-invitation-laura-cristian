@@ -16,7 +16,7 @@ export default function Message() {
         className="absolute left-0 top-1/2 -translate-y-1/2 w-32 md:w-32 lg:w-42 select-none"
       >
         <Image 
-          src="/envelope/flor4.png" 
+          src="/envelope/florCinco.png" 
           alt="Decoración floral izquierda"
           width={500}
           height={500}
