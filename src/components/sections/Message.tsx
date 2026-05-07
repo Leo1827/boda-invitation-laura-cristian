@@ -7,23 +7,20 @@ export default function Message() {
   return (
     <section className="relative w-full bg-[#f3f0e9] py-20 overflow-hidden flex items-center justify-center min-h-[350px]">
       
-      {/* Flor Izquierda con entrada suave desde FUERA de la pantalla por la izquierda */}
+      {/* Flor Izquierda con entrada desde la izquierda */}
       <motion.div 
-        // Cambiamos x: -50 por x: '-100vw'
-        initial={{ opacity: 0, x: '-100vw' }}
+        initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 0.9, x: -60 }}
-        // Usamos una transición más suave con "backOut" para un efecto elegante al final
-        transition={{ duration: 1.5, ease: [0.175, 0.885, 0.32, 1.275] }} 
+        transition={{ duration: 1.2, ease: "easeOut" }}
         viewport={{ once: true }}
-        className="absolute left-0 top-1/2 -translate-y-1/2 w-42 md:w-32 lg:w-46 select-none"
+        className="absolute left-0 top-1/2 -translate-y-1/2 w-32 md:w-32 lg:w-42 select-none"
       >
         <Image 
           src="/envelope/flor4.png" 
           alt="Decoración floral izquierda"
           width={500}
           height={500}
-          // Aseguramos que la imagen use object-cover para pegarse al borde
-          className="w-52 md:w-56 h-auto object-cover" 
+          className="ml-6 w-72 h-auto object-contain"
         />
       </motion.div>
 
@@ -31,7 +28,7 @@ export default function Message() {
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.2, delay: 0.8 }}
+        transition={{ duration: 1, delay: 0.5 }}
         viewport={{ once: true }}
         className="relative z-10 max-w-2xl text-center flex flex-col gap-4"
       >
@@ -44,9 +41,9 @@ export default function Message() {
         </p>
       </motion.div>
 
-      {/* Flor Derecha con entrada suave desde la derecha */}
+      {/* Flor Derecha con entrada desde la derecha */}
       <motion.div 
-        initial={{ opacity: 0, x: 50 }} // La derecha puede quedarse con un desplazamiento menor
+        initial={{ opacity: 0, x: 50 }}
         whileInView={{ opacity: 0.9, x: 0 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
         viewport={{ once: true }}
