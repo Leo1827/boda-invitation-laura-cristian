@@ -5,9 +5,20 @@ import { motion } from "framer-motion";
 
 export default function Message() {
   return (
-    <section className="relative w-full bg-[#f3f0e9] py-20 overflow-hidden flex items-center justify-center min-h-[350px]">
+    <section className="relative bg-[#f3f0e9] w-full py-20 overflow-hidden flex items-center justify-center min-h-[350px]">
       
-      {/* Flor Izquierda con entrada desde la izquierda */}
+      {/* Tu fondo original con degradado */}
+      <div className="absolute inset-0 bg-gradient-to-t from-[#deb98860] via-[#f3f0e9]/90 to-transparent pointer-events-none" />
+
+      {/* 
+         EL DESVANECIDO: 
+         Crea una transición suave hacia el color de fondo para borrar cualquier línea.
+      */}
+      <div 
+        className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#f3f0e9] to-transparent z-20 pointer-events-none" 
+      />
+
+      {/* Flor Izquierda */}
       <motion.div 
         initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 0.9, x: -60 }}
@@ -24,7 +35,7 @@ export default function Message() {
         />
       </motion.div>
 
-      {/* Contenedor de Texto Central con aparición gradual */}
+      {/* Contenedor de Texto Central */}
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -41,7 +52,7 @@ export default function Message() {
         </p>
       </motion.div>
 
-      {/* Flor Derecha con entrada desde la derecha */}
+      {/* Flor Derecha */}
       <motion.div 
         initial={{ opacity: 0, x: 50 }}
         whileInView={{ opacity: 0.9, x: 0 }}
@@ -57,8 +68,6 @@ export default function Message() {
           className="w-52 ml-12 md:ml-28 h-auto object-contain"
         />
       </motion.div>
-
-      <div className="absolute bottom-0 left-0 w-full h-[1px] bg-black/5"></div>
     </section>
   );
 }

@@ -7,6 +7,7 @@ import Hotels from "@/components/sections/Hotels";
 import NoGifts from "@/components/sections/NoGifts";
 import Confirmation from "@/components/sections/Confirmation";
 import Message from "@/components/sections/Message";
+import ImageParallax from "@/components/sections/ImageParallax";
 
 export default function Invitacion() {
   return (
@@ -15,6 +16,7 @@ export default function Invitacion() {
       <Message />
       <Countdown />
       <Calendar />
+      <ImageParallax />
       <Location />
       <Hotels />
       <DressCode />

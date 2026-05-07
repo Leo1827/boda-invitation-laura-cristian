@@ -7,7 +7,7 @@ export default function CalendarSection() {
   const eventDay = 27;
 
   return (
-    <section className="relative bg-[#F2F2E4] md:py-16 px-6 md:px-12 overflow-hidden font-[family-name:var(--font-cormorant)]">
+    <section className="relative bg-[#f3f0e9] md:py-16 px-6 md:px-12 overflow-hidden font-[family-name:var(--font-cormorant)]">
       
       {/* Flores decorativas - Esquinas (Usa tus archivos PNG con transparencia) */}
         <div className="absolute top-0 left-0 w-48 h-48 md:w-64 md:h-64 opacity-80 pointer-events-none">
