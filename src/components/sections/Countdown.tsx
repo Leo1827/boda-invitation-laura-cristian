@@ -19,7 +19,7 @@ export default function Countdown() {
   ];
 
   return (
-    <section className="bg-[#deb98860] text-[#a6603f] py-12 px-4 flex flex-col items-center justify-center font-[family-name:var(--font-cormorant)]">
+    <section className="bg-[#deb98860] text-[peru] py-12 px-4 flex flex-col items-center justify-center font-[family-name:var(--font-cormorant)]">
       <h2 className="text-3xl md:text-4xl tracking-[aem] uppercase mb-10 opacity-90 font-light">
         Faltan
       </h2>

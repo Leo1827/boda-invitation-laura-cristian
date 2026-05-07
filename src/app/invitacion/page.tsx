@@ -1,5 +1,6 @@
 import Hero from "@/components/sections/Hero";
 import Countdown from "@/components/sections/Countdown";
+import Calendar from "@/components/sections/Calendar";
 import Location from "@/components/sections/Location";
 import DressCode from "@/components/sections/Dresscode";
 import Hotels from "@/components/sections/Hotels";
@@ -13,6 +14,7 @@ export default function Invitacion() {
       <Hero />
       <Message />
       <Countdown />
+      <Calendar />
       <Location />
       <Hotels />
       <DressCode />
