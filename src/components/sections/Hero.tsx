@@ -106,7 +106,7 @@ export default function Hero() {
         </div>
 
         {/* REPRODUCTOR */}
-        <div className="mt-[30rem] md:mt-72 flex items-center gap-4 bg-white/10 backdrop-blur-md border border-white/20 px-5 py-3 rounded-full shadow-2xl">
+        <div className="mt-[24rem] md:mt-72 flex items-center gap-4 bg-white/10 backdrop-blur-md border border-white/20 px-5 py-3 rounded-full shadow-2xl">
 
           {/* Play / Pause */}
           <button
