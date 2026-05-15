@@ -48,12 +48,12 @@ export default function HeroEnvelope() {
             >
               <path d="M 0 0 L 500 0 L 275 150 Q 250 175 225 150 L 0 0 Z" />
 
-              <foreignObject x="185" y="20" width="130" height="130">
+              <foreignObject x="185" y="10" width="130" height="130">
                 <div className="w-full flex justify-center">
                   <img
                     src="/envelope/iniciales.png"
                     alt="Iniciales"
-                    className="w-18 object-contain opacity-95"
+                    className="w-22 object-contain"
                   />
                 </div>
               </foreignObject>
@@ -95,7 +95,7 @@ export default function HeroEnvelope() {
       {/* BOTTOM */}
       <footer className="text-center">
         <h2 className="text-[#333] text-3xl tracking-[0.3em] uppercase">
-          Laura & Cristian
+          Daniela & Cristian
         </h2>
       </footer>
     </main>
