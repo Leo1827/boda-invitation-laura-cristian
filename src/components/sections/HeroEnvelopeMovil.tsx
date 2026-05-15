@@ -157,8 +157,8 @@ export default function HeroEnvelopeMovil() {
                   isOpen ? "opacity-0" : "opacity-100"
                 }`}
               >
-                <div className="relative translate-y-[-10%] scale-75">
-                  <img src="envelope/iniciales.png" className="w-32 mt-6" alt="" />
+                <div className="relative translate-y-[-30%] scale-50">
+                  <img src="envelope/iniciales.png" className="w-72" alt="" />
                 </div>
               </div>
             </div>
