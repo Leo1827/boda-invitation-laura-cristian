@@ -112,14 +112,11 @@ export default function HeroEnvelopeMovil() {
           {/* 3. TAPA SUPERIOR */}
           <div className="absolute top-0 left-0 w-[100%] h-[40%] perspective-2000 pointer-events-none z-40">
             <div className={`flap-3d relative w-full h-full ${isOpen ? "open" : ""}`}>
-
-
+              
               <svg
                 viewBox="0 0 500 250"
                 preserveAspectRatio="none"
                 className="w-full h-full block drop-shadow-xl"
-                /* Evita el suavizado de bordes que causa la línea blanca */
-                shapeRendering="geometricPrecision"
               >
                 <defs>
                   <pattern
@@ -139,26 +136,18 @@ export default function HeroEnvelopeMovil() {
                   </pattern>
                 </defs>
 
-                {/* 
-                    FASE 1: Un triángulo base sólido un poco más grande (-1 y +1) 
-                    Esto actúa como "parche" para que nada brille por debajo.
-                */}
+                {/* TEXTURA */}
                 <path
-                  d="M -1 -1 L 501 -1 L 250 251 Z"
-                  fill="#b89c85"
+                  d="M 0 0 L 500 0 L 250 250 L 0 0 Z"
+                  fill="url(#paperTexture)"
                 />
 
-                {/* 
-                    FASE 2: La textura con multiply. 
-                    Añadimos stroke (borde) del mismo color para "sellar" el anti-aliasing.
-                */}
+                {/* COLOR MULTIPLY */}
                 <path
-                  d="M 0 0 L 500 0 L 250 250 Z"
-                  fill="url(#paperTexture)"
-                  stroke="#b89c85"
-                  strokeWidth="1"
-                  style={{ mixBlendMode: "multiply" }}
+                  d="M 0 0 L 500 0 L 250 250 L 0 0 Z"
+                  fill="#b89c85"
                   opacity="0.97"
+                  style={{ mixBlendMode: "multiply" }}
                 />
               </svg>
 
@@ -172,6 +161,7 @@ export default function HeroEnvelopeMovil() {
                   <span className="text-[100px] initials-text text-[#7a6451]/30 italic leading-none block">
                     A
                   </span>
+
                   <span className="text-[100px] initials-text text-[#7a6451]/30 italic leading-none block absolute top-[30px] left-[25px]">
                     P
                   </span>
