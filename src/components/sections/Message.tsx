@@ -7,15 +7,17 @@ export default function Message() {
   return (
     <section className="relative bg-[#f3f0e9] w-full py-20 overflow-hidden flex items-center justify-center min-h-[350px]">
       
-      {/* Tu fondo original con degradado */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#deb98860] via-[#f3f0e9]/90 to-transparent pointer-events-none" />
-
       {/* 
-         EL DESVANECIDO: 
-         Crea una transición suave hacia el color de fondo para borrar cualquier línea.
+        Este es el gradiente de desvanecido.
+        'before:' crea un elemento extra.
+        'bg-gradient-to-t' crea el degradado de abajo hacia arriba.
+        'from-[#f3f0e9]' define el color sólido abajo.
+        'to-transparent' define la transparencia arriba.
+        'h-24' controla qué tan alto llega el efecto.
       */}
       <div 
-        className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#f3f0e9] to-transparent z-20 pointer-events-none" 
+        className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#deb98860] via-[#f3f0e9]/90 to-transparent pointer-events-none"
+        aria-hidden="true"
       />
 
       {/* Flor Izquierda */}

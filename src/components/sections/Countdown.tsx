@@ -20,7 +20,7 @@ export default function Countdown() {
   return (
     // Añadimos 'relative' y un overflow hidden para el pseudo-elemento
     <section className="bg-[#deb98860] text-[peru] pb-42 pt-10 px-4 flex flex-col items-center justify-center font-[family-name:var(--font-cormorant)] relative overflow-hidden">
-      
+
       {/* 
         Este es el gradiente de desvanecido.
         'before:' crea un elemento extra.
