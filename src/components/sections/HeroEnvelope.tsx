@@ -27,11 +27,11 @@ export default function HeroEnvelope() {
       
       {/* TOP */}
       <header className="text-center animate-fade-in">
-        <p className="text-[#a66d4a] text-2xl italic tracking-wide mb-6">
+        <p className="text-[#333] text-2xl italic tracking-wide mb-6">
           Los rumores son ciertos
         </p>
 
-        <h1 className="text-[#a66d4a] text-4xl tracking-[0.2em] uppercase">
+        <h1 className="text-[#333] text-4xl tracking-[0.2em] uppercase">
           ¡Nos Casamos!
         </h1>
       </header>
@@ -48,27 +48,15 @@ export default function HeroEnvelope() {
             >
               <path d="M 0 0 L 500 0 L 275 150 Q 250 175 225 150 L 0 0 Z" />
 
-              <g className={styles.initialsContainer}>
-                <text
-                  x="54%"
-                  y="26%"
-                  textAnchor="middle"
-                  dominantBaseline="middle"
-                  className={styles.initials}
-                >
-                  C
-                </text>
-
-                <text
-                  x="49%"
-                  y="18%"
-                  textAnchor="middle"
-                  dominantBaseline="middle"
-                  className={styles.initials}
-                >
-                  L
-                </text>
-              </g>
+              <foreignObject x="185" y="20" width="130" height="130">
+                <div className="w-full flex justify-center">
+                  <img
+                    src="/envelope/iniciales.png"
+                    alt="Iniciales"
+                    className="w-18 object-contain opacity-95"
+                  />
+                </div>
+              </foreignObject>
             </svg>
 
             {/* SELLO */}
@@ -106,7 +94,7 @@ export default function HeroEnvelope() {
 
       {/* BOTTOM */}
       <footer className="text-center">
-        <h2 className="text-[#a66d4a] text-3xl tracking-[0.3em] uppercase">
+        <h2 className="text-[#333] text-3xl tracking-[0.3em] uppercase">
           Laura & Cristian
         </h2>
       </footer>

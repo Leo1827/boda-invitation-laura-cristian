@@ -158,13 +158,7 @@ export default function HeroEnvelopeMovil() {
                 }`}
               >
                 <div className="relative translate-y-[-10%] scale-75">
-                  <span className="text-[100px] initials-text text-[#7a6451]/30 italic leading-none block">
-                    A
-                  </span>
-
-                  <span className="text-[100px] initials-text text-[#7a6451]/30 italic leading-none block absolute top-[30px] left-[25px]">
-                    P
-                  </span>
+                  <img src="envelope/iniciales.png" className="w-32 mt-6" alt="" />
                 </div>
               </div>
             </div>

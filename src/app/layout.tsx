@@ -35,7 +35,7 @@ const cinzelDecorative = Cinzel_Decorative({
 });
 
 export const metadata: Metadata = {
-  title: "Boda Laura & Cristian",
+  title: "Boda Daniela & Cristian",
   description: "Invitación digital",
 };
 
