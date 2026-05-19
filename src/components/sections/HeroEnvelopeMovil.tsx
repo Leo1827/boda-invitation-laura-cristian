@@ -5,21 +5,17 @@ import { useRouter } from "next/navigation";
 
 export default function HeroEnvelopeMovil() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isZoomed, setIsZoomed] = useState(false);
   const router = useRouter();
 
   const handleOpen = () => {
     if (isOpen) return;
-    setIsOpen(true);
-    
-    // El zoom ocurre después de que la carta se ha extraído completamente
-    setTimeout(() => {
-      setIsZoomed(true);
-    }, 2000);
 
+    setIsOpen(true);
+
+    // Tiempo suficiente para la animación elegante
     setTimeout(() => {
       router.push("/invitacion");
-    }, 2000);
+    }, 400);
   };
 
   return (
@@ -28,170 +24,163 @@ export default function HeroEnvelopeMovil() {
         html, body {
           overflow: hidden;
           height: 100%;
-          background-image: url("/envelope/fondo.jpg");
-          background-position: center;
-          background-repeat: no-repeat;
-          background-color: #b89c86;
-          background-blend-mode: multiply;
-
           margin: 0;
+          background: #f4ede4;
         }
 
-        .fondoCarton{
-          background-image: url("/envelope/fondo.jpg");
-          background-position: center;
-          background-repeat: no-repeat;
-          background-color: #b89c86 !important;
-          background-blend-mode: multiply;
+        .perspective-parent {
+          perspective: 3000px;
         }
 
-        .perspective-2000 { perspective: 2000px; }
-
-        /* TAPA */
+        /* TAPA SUAVE */
         .flap-3d {
-          transform-origin: top;
-          transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
-          z-index: 45;
+          transform-origin: top center;
+          transition:
+            transform 2.4s cubic-bezier(0.22, 1, 0.36, 1),
+            opacity 1.5s ease;
+          z-index: 50;
+          will-change: transform;
         }
+
+        /* SE LEVANTA SOLO UN POCO */
         .flap-3d.open {
-          transform: rotateX(160deg);
-          z-index: 10; 
+          transform: rotateX(55deg) translateY(-2%);
         }
 
-        /* LA CARTA */
-        .letter-slide {
-          background-image: url("/envelope/fondo.jpg");
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: cover;
-
-          background-color: #fff;
-          background-blend-mode: multiply;
-
-          padding: 15px;
-
-          transition: 
-            transform 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.8s,
-            z-index 0s 1.2s; 
-
-          z-index: 5;
-
-          overflow: hidden; /* IMPORTANTE */
+        /* IMAGEN DETRÁS */
+        .background-photo {
+          transition:
+            transform 2.6s cubic-bezier(0.22, 1, 0.36, 1),
+            opacity 2s ease,
+            filter 2s ease;
         }
 
-        /* Cuando abre: se extrae y SOBREPONE a la tapa */
-        .extract {
-          z-index: 80; 
-          transform: translateY(-120px);
-        }
-
-        .initials-text {
-          font-family: 'Times New Roman', serif;
-          user-select: none;
+        .background-photo.show {
+          transform: scale(1.03);
+          opacity: 1;
+          filter: blur(0px);
         }
       `}</style>
 
-      <main className="fixed inset-0 w-full h-[90dvh] flex items-center justify-center overflow-hidden">
-        
-        <div 
-          className="relative w-[100%] max-w-[620px] h-[50%] mt-50 flex items-center justify-center cursor-pointer"
+      <main className="fixed inset-0 w-full h-screen overflow-hidden bg-[#f4ede4]">
+
+        <div
           onClick={handleOpen}
+          className="relative w-full h-full cursor-pointer select-none perspective-parent overflow-hidden"
         >
-          
-          {/* 2. LA CARTA (PHOTO) */}
-          <div className={`absolute w-[90%] h-[94%] letter-slide flex items-center justify-center
-            ${isOpen ? 'extract' : 'z-20' } 
-            ${isZoomed ? 'zoom' : ''}`}>
+
+          {/* SOBRE BASE */}
+          <div className="absolute inset-0 z-20 pointer-events-none">
             <img
-              src="/envelope/imagen_1.jpg"
-              alt="Boda"
-              className="w-full h-full object-cover mix-blend-multiply opacity-90"
+              src="/envelope/1_carta.png"
+              alt="Sobre base"
+              className="w-full h-full object-cover object-center"
             />
           </div>
 
-          {/* 3. TAPA SUPERIOR */}
-          <div className="absolute top-0 left-0 w-[100%] h-[40%] perspective-2000 pointer-events-none z-40">
-            <div className={`flap-3d relative w-full h-full ${isOpen ? "open" : ""}`}>
-              
-              <svg
-                viewBox="0 0 500 250"
-                preserveAspectRatio="none"
-                className="w-full h-full block drop-shadow-xl"
-              >
-                <defs>
-                  <pattern
-                    id="paperTexture"
-                    patternUnits="userSpaceOnUse"
-                    width="500"
-                    height="250"
-                  >
-                    <image
-                      href="/envelope/fondo.jpg"
-                      x="0"
-                      y="0"
-                      width="800"
-                      height="250"
-                      preserveAspectRatio="xMidYMid slice"
-                    />
-                  </pattern>
-                </defs>
+          {/* TAPA GRANDE */}
+          <div
+            className={`
+              absolute
+              top-[-14%]
+              left-1/2
+              -translate-x-1/2
+              w-[260%]
+              h-[72vh]
+              pointer-events-none
+              flap-3d
+              ml-10
+              ${isOpen ? "open" : ""}
+            `}
+          >
+            <div className="relative w-full h-full">
 
-                {/* TEXTURA */}
-                <path
-                  d="M 0 0 L 500 0 L 250 250 L 0 0 Z"
-                  fill="url(#paperTexture)"
-                />
-
-                {/* COLOR MULTIPLY */}
-                <path
-                  d="M 0 0 L 500 0 L 250 250 L 0 0 Z"
-                  fill="#b89c85"
-                  opacity="0.97"
-                  style={{ mixBlendMode: "multiply" }}
-                />
-              </svg>
+              <img
+                src="/envelope/2_hd_tapa.png"
+                alt="Tapa"
+                className="
+                  w-full
+                  h-full
+                  object-contain
+                  drop-shadow-[0_25px_40px_rgba(0,0,0,0.12)]
+                "
+              />
 
               {/* INICIALES */}
               <div
-                className={`absolute inset-0 flex items-center justify-center transition-opacity duration-500 ${
-                  isOpen ? "opacity-0" : "opacity-100"
-                }`}
+                className={`
+                  absolute inset-0
+                  flex items-center justify-center
+                  transition-all duration-[1200ms]
+                  ${isOpen ? "opacity-0 scale-90" : "opacity-100"}
+                `}
               >
-                <div className="relative translate-y-[-30%] scale-50">
-                  <img src="envelope/iniciales.png" className="w-72" alt="" />
+                <div className="translate-y-[-6vh]">
+                  <img
+                    src="/envelope/iniciales.png"
+                    alt="Iniciales"
+                    className="w-40 h-40 mr-18 mt-52 object-contain"
+                  />
                 </div>
               </div>
+
             </div>
           </div>
 
-          {/* 4. FRONTALES (LATERALES E INFERIOR) */}
-          <div className="absolute inset-0 z-30 pointer-events-none">
-             {/* Lateral Izquierdo */}
-             <div className="absolute inset-0 fondoCarton" style={{ clipPath: 'polygon(0% 0%, 50% 35%, 0% 100%)' }} />
-             {/* Lateral Derecho */}
-             <div className="absolute inset-0 fondoCarton" style={{ clipPath: 'polygon(100% 0%, 50% 35%, 100% 100%)' }} />
-             {/* Triángulo Inferior */}
-             <div className="absolute inset-0 fondoCarton" style={{ clipPath: 'polygon(0% 100%, 50% 30%, 100% 100%)' }} />
-          </div>
-
-          {/* 5. SELLO */}
+          {/* SELLO */}
           <div
-            className={`absolute animate-pulse left-1/2 top-[35%]
-            -translate-x-1/2 -translate-y-1/2
-            z-[60] transition-opacity duration-1000 ease-in-out
-            ${isOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}
+            className={`
+              absolute
+              left-1/2
+              top-[52%]
+              -translate-x-1/2
+              -translate-y-1/2
+              z-[60]
+              transition-all duration-[1400ms] ease-out
+              flex flex-col items-center
+              ${
+                isOpen
+                  ? "opacity-0 scale-75 translate-y-6 pointer-events-none"
+                  : "opacity-100"
+              }
+            `}
           >
             <div className="relative flex flex-col items-center">
-              <img
-                src="/envelope/sello.png"
-                alt="Sello"
-                className="w-24 h-24 object-contain drop-shadow-[0_8px_15px_rgba(0,0,0,0.4)]"
-              />
-              {!isOpen && (
-                <div className="mt-2 text-[#5e4d3e] text-[9px] font-bold tracking-[0.4em] uppercase animate-pulse whitespace-nowrap">
-                  Toca para abrir
-                </div>
-              )}
+
+              <div
+                className="
+                  w-16 h-16
+                  bg-[#faf8f5]
+                  rounded-full
+                  border border-[#e8dfd5]
+                  flex items-center justify-center
+                  shadow-[0_12px_30px_rgba(0,0,0,0.18)]
+                "
+              >
+                <span className="font-serif text-[#8c7a6b] text-lg">
+                  ✦
+                </span>
+              </div>
+
+              <div
+                className="
+                  mt-5
+                  text-[#8c7a6b]
+                  text-[10px]
+                  font-bold
+                  tracking-[0.45em]
+                  uppercase
+                  whitespace-nowrap
+                  bg-[#faf8f5]/90
+                  px-5 py-2
+                  rounded-full
+                  border border-[#e8dfd5]
+                  shadow-lg
+                "
+              >
+                Toca para abrir
+              </div>
+
             </div>
           </div>
 

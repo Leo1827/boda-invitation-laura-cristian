@@ -61,12 +61,11 @@ export default function Hero() {
             md:h-[80%]
             overflow-hidden
 
-            [mask-image:radial-gradient(ellipse_at_center,black_1%,rgba(0,0,0,0.95)_30%,rgba(0,0,0,0.65)_60%,rgba(0,0,0,0.25)_74%,transparent_88%)]
-            [-webkit-mask-image:radial-gradient(ellipse_at_center,black_1%,rgba(0,0,0,0.95)_24%,rgba(0,0,0,0.65)_54%,rgba(0,0,0,0.25)_62%,transparent_72%)]
+          
           "
         >
           <Image
-            src="/envelope/imagen_2.jpg"
+            src="/envelope/imagen_1.jpg"
             alt="Daniela y Cristian"
             fill
             priority
