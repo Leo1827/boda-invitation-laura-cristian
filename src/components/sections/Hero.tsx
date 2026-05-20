@@ -40,7 +40,7 @@ export default function Hero() {
       {/* Fondo del mar */}
       <div className="absolute inset-0 -z-20">
         <Image
-          src="https://images.pexels.com/photos/7070907/pexels-photo-7070907.jpeg"
+          src="/envelope/imagen_2.jpg"
           alt="Mar"
           fill
           priority
@@ -61,7 +61,8 @@ export default function Hero() {
             md:h-[80%]
             overflow-hidden
 
-          
+            [mask-image:radial-gradient(ellipse_at_center,black_1%,rgba(0,0,0,0.95)_30%,rgba(0,0,0,0.65)_60%,rgba(0,0,0,0.25)_74%,transparent_88%)]
+            [-webkit-mask-image:radial-gradient(ellipse_at_center,black_1%,rgba(0,0,0,0.95)_24%,rgba(0,0,0,0.65)_54%,rgba(0,0,0,0.25)_62%,transparent_72%)]
           "
         >
           <Image
@@ -100,7 +101,7 @@ export default function Hero() {
 
         <div className="mt-8 flex items-center gap-4 text-lg md:text-xl font-[family-name:var(--font-pinyon)] tracking-[0.2em] drop-shadow-md">
           <span className="border-t border-white/80 w-8 md:w-12 block"></span>
-          27 · 06 · 2026
+          08 · 08 · 2026
           <span className="border-t border-white/80 w-8 md:w-12 block"></span>
         </div>
 
