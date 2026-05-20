@@ -49,7 +49,7 @@ export default function Message() {
           “Todo tiene su tiempo, y todo lo que se quiere debajo del cielo tiene su hora…”
         </p>
         
-        <p className="text-[#a6603f] font-[family-name:var(--font-pinyon)] text-2xl md:text-4xl lg:text-3xl px-12 md:px-14">
+        <p className="text-[#a6603f] font-[family-name:var(--font-pinyon)] text-2xl md:text-4xl lg:text-3xl px-8 md:px-14">
           “Mejores son dos que uno… porque si cayera el uno, levantará al otro… y cordón de tres dobleces no se romperá.”
             — Eclesiastés 3:1 & 4:9-12
         </p>
