@@ -108,7 +108,7 @@ export default function Hero() {
         {/* REPRODUCTOR */}
         <div
           className="
-            mt-[28rem]
+            mt-[24rem]
             md:mt-[15rem]
             min-[1600px]:mt-16
             flex

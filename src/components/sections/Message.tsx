@@ -46,11 +46,12 @@ export default function Message() {
         className="relative z-10 max-w-2xl text-center flex flex-col gap-4"
       >
         <p className="text-[#4a4a4a] font-[family-name:var(--font-cormorant)] text-lg md:text-xl lg:text-lg leading-relaxed md:px-0 px-16">
-          Con inmensa felicidad compartimos que hemos decidido dar el gran paso y unir nuestras vidas en matrimonio.
+          “Todo tiene su tiempo, y todo lo que se quiere debajo del cielo tiene su hora…”
         </p>
         
-        <p className="text-[#a6603f] font-[family-name:var(--font-pinyon)] text-3xl md:text-4xl lg:text-3xl px-12 md:px-32">
-          Los invitamos a acompañarnos en este día tan especial.
+        <p className="text-[#a6603f] font-[family-name:var(--font-pinyon)] text-2xl md:text-4xl lg:text-3xl px-12 md:px-14">
+          “Mejores son dos que uno… porque si cayera el uno, levantará al otro… y cordón de tres dobleces no se romperá.”
+            — Eclesiastés 3:1 & 4:9-12
         </p>
       </motion.div>
 
