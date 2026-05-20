@@ -90,6 +90,7 @@ export default function HeroEnvelopeMovil() {
               pointer-events-none
               flap-3d
               ml-10
+              mt-14
               ${isOpen ? "open" : ""}
             `}
           >
@@ -119,7 +120,7 @@ export default function HeroEnvelopeMovil() {
                   <img
                     src="/envelope/iniciales.png"
                     alt="Iniciales"
-                    className="w-40 h-40 mr-18 mt-52 object-contain"
+                    className="w-72 h-52 mr-18 mt-52 object-contain"
                   />
                 </div>
               </div>
@@ -127,62 +128,68 @@ export default function HeroEnvelopeMovil() {
             </div>
           </div>
 
-          {/* SELLO */}
-          <div
-            className={`
-              absolute
-              left-1/2
-              top-[52%]
-              -translate-x-1/2
-              -translate-y-1/2
-              z-[60]
-              transition-all duration-[1400ms] ease-out
-              flex flex-col items-center
-              ${
-                isOpen
-                  ? "opacity-0 scale-75 translate-y-6 pointer-events-none"
-                  : "opacity-100"
-              }
-            `}
-          >
-            <div className="relative flex flex-col items-center">
+{/* SELLO */}
+<div
+  className={`
+    absolute
+    left-1/2
+    top-[54%]
+    -translate-x-1/2
+    -translate-y-1/2
+    z-[60]
+    transition-all duration-[1000ms] ease-out
+    flex flex-col items-center
+    ${
+      isOpen
+        ? "opacity-0 scale-75 pointer-events-none"
+        : "opacity-100 scale-100"
+    }
+  `}
+>
+  <div className="relative flex flex-col items-center">
 
-              <div
-                className="
-                  w-16 h-16
-                  bg-[#faf8f5]
-                  rounded-full
-                  border border-[#e8dfd5]
-                  flex items-center justify-center
-                  shadow-[0_12px_30px_rgba(0,0,0,0.18)]
-                "
-              >
-                <span className="font-serif text-[#8c7a6b] text-lg">
-                  ✦
-                </span>
-              </div>
+    {/* Imagen del sello */}
+    <div
+      className="
+        relative
+        w-54 h-54
+        flex items-center justify-center
+        drop-shadow-[0_12px_30px_rgba(0,0,0,0.22)]
+      "
+    >
+      <img
+        src="/envelope/sello.png"
+        alt="Sello"
+        className="
+          w-full h-full
+          object-contain
+          select-none
+          pointer-events-none
+        "
+      />
+    </div>
 
-              <div
-                className="
-                  mt-5
-                  text-[#8c7a6b]
-                  text-[10px]
-                  font-bold
-                  tracking-[0.45em]
-                  uppercase
-                  whitespace-nowrap
-                  bg-[#faf8f5]/90
-                  px-5 py-2
-                  rounded-full
-                  border border-[#e8dfd5]
-                  shadow-lg
-                "
-              >
-                Toca para abrir
-              </div>
+    {/* Texto */}
+    <div
+      className="
+        text-[#8c7a6b]
+        text-[10px]
+        font-bold
+        tracking-[0.45em]
+        uppercase
+        whitespace-nowrap
+        bg-[#faf8f5]/90
+        px-5 py-2
+        rounded-full
+        border border-[#e8dfd5]
+        shadow-lg
+      "
+    >
+      Toca para abrir
+    </div>
 
-            </div>
-          </div>
+  </div>
+</div>
 
         </div>
       </main>
