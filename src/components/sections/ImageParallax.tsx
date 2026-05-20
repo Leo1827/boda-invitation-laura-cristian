@@ -6,7 +6,7 @@ interface ImageParallaxProps {
 }
 
 export default function ImageParallax({ 
-  imageUrl = "https://framerusercontent.com/images/gMUeAqmXvPOknhruvbcVBbafq0.jpg?width=1920&height=2880", 
+  imageUrl = "/envelope/imagen_3.jpg", 
   height = "400px" 
 }: ImageParallaxProps) {
   return (

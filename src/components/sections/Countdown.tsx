@@ -30,7 +30,7 @@ export default function Countdown() {
         'h-24' controla qué tan alto llega el efecto.
       */}
       <div 
-        className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#f3f0e9] via-[#f3f0e9]/90 to-transparent pointer-events-none"
+        className="absolute bottom-0 left-0 right-0 h-14 bg-gradient-to-t from-[#f3f0e9] via-[#f3f0e9]/90 to-transparent pointer-events-none"
         aria-hidden="true"
       />
 

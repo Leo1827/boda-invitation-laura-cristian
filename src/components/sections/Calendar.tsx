@@ -15,16 +15,16 @@ export default function CalendarSection() {
     <section className="relative bg-[#f3f0e9] md:py-16 px-6 md:px-12 overflow-hidden font-[family-name:var(--font-cormorant)]">
       
       {/* Flores decorativas - Esquinas (Usa tus archivos PNG con transparencia) */}
-        <div className="absolute top-0 left-0 w-48 h-48 md:w-64 md:h-64 opacity-80 pointer-events-none">
-            <img src="https://static.vecteezy.com/system/resources/thumbnails/009/596/747/small/rose-flower-and-botanical-leaf-digital-painted-png.png" 
-                alt="" className="object-contain w-full h-full" />
+        <div className="absolute top-48 md:top-0 left-0 w-32 h-32 md:w-64 md:h-[680px] opacity-50 pointer-events-none">
+            <img src="/envelope/hojas_palmera.png" 
+                alt="" className="object-contain w-full md:h-full h-[900px]" />
         </div>
 
-        <div className="absolute bottom-0 -right-24 w-48 h-48 md:w-64 md:h-64 opacity-80 pointer-events-none">
-            <img src="https://static.vecteezy.com/system/resources/thumbnails/047/311/950/small/a-vibrant-flower-png.png" alt="" className="object-contain w-full h-full" />
+        <div className="absolute bottom-0 -right-24 w-48 h-48 md:w-64 md:h-64 opacity-70 mr-8 pointer-events-none">
+            <img src="/envelope/palmera_2.png" alt="" className="object-contain w-full h-full" />
         </div>
 
-        <div className="max-w-5xl mx-auto flex flex-col-reverse lg:grid lg:grid-cols-2 items-center gap-8">
+        <div className="max-w-5xl mx-auto flex flex-col-reverse lg:grid lg:grid-cols-2 items-center gap-8 mb-4">
         
             {/* Lado Izquierdo: El Gran Día (Aparece abajo en móvil) */}
             <motion.div 
@@ -34,10 +34,10 @@ export default function CalendarSection() {
                 viewport={{ once: true }}
                 className="flex flex-col items-center text-[#A64D1B]"
             >
-                <h2 className="text-3xl md:text-4xl leading-2 uppercase font-light mb-4">
+                <h2 className="text-3xl md:text-4xl leading-2 uppercase font-light mb-0 mt-4">
                     El Gran Día
                 </h2>
-                <span className="text-4xl md:text-5xl font-[family-name:var(--font-pinyon)] lowercase family-cursive">
+                <span className="text-5xl md:text-5xl font-[family-name:var(--font-pinyon)] lowercase family-cursive">
                     Agosto
                 </span>
 
@@ -91,7 +91,7 @@ export default function CalendarSection() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
-                className="relative flex my-8 justify-center items-end h-[500px] md:h-[450px] w-full"
+                className="relative flex justify-center items-end h-[400px] md:h-[450px] w-full"
             >
                 {/* Imagen Principal en Arco */}
                 <div className="relative w-64 h-96 md:w-70 md:h-[450px] overflow-hidden rounded-full shadow-lg">

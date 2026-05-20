@@ -37,49 +37,39 @@ export default function Location() {
     <section className="relative w-full py-32 font-[family-name:var(--font-cormorant)] px-4 bg-[#F5F2ED] overflow-hidden min-h-[400px] flex flex-col items-center justify-center">
       
       {/* Flores decorativas - Esquinas (Usa tus archivos PNG con transparencia) */}
-      <div className="absolute top-0 -left-12 w-48 h-48 md:w-64 md:h-64 opacity-80 pointer-events-none rotate-90">
-          <img src="https://static.vecteezy.com/system/resources/thumbnails/047/311/950/small/a-vibrant-flower-png.png" 
+      <div className="absolute -top-8 -left-18 w-48 h-48 md:w-64 md:h-64 opacity-80 pointer-events-none rotate-50">
+          <img src="/envelope/palmera1.png" 
               alt="" className="object-contain w-full h-full" />
       </div>
 
-      <div className="absolute bottom-0 -right-1 w-48 h-48 md:w-64 md:h-64 opacity-80 pointer-events-none rotate-180">
-          <img src="https://static.vecteezy.com/system/resources/thumbnails/009/596/747/small/rose-flower-and-botanical-leaf-digital-painted-png.png" alt="" className="object-contain w-full h-full" />
+      <div className="absolute top-0 -right-18 w-48 h-48 md:w-64 md:h-64 opacity-80 pointer-events-none rotate-180">
+          <img src="/envelope/palmera2.png" alt="" className="object-contain w-full h-full" />
       </div>
 
       {/* TÍTULO PRINCIPAL DE LA SECCIÓN */}
       <div className="relative z-10 text-center mb-10">
         <span className="text-[#B47C54] uppercase tracking-[0.3em] text-sm mb-4 block font-light">Donde comienza nuestra historia</span>
-        <h1 className="text-4xl md:text-6xl font-light italic text-[#4A4A4A] serif">La Guajira</h1>
+        <h1 className="text-4xl md:text-6xl font-light italic text-[#4A4A4A] serif">Riohacha - La Guajira</h1>
         <div className="w-24 h-[1px] bg-[#B47C54] mx-auto mt-6 opacity-50"></div>
       </div>
 
       {/* Contenedor Principal */}
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-62 relative z-10">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-62 relative z-10">
         {locations.map((loc, index) => (
           <div key={index} className="flex flex-col items-center text-center">
             {/* Icono */}
             <div className="opacity-80 mb-4">{loc.icon}</div>
 
             {/* Título con estilo Serif elegante */}
-            <h2 className="text-4xl md:text-3xl font-light leading-2 uppercase  text-[#B47C54] mb-6">
+            <h2 className="text-4xl md:text-3xl font-light leading-2 uppercase  text-[#B47C54] mb-4">
               {loc.title}
             </h2>
 
             {/* Detalles */}
             <div className="space-y-2 mb-2 font-light text-[#4A4A4A]">
               <p className="text-xl font-bold">{loc.time}</p>
-              <p className="text-lg font-bold">{loc.place}</p>
             </div>
 
-            {/* Botón con sombra profesional */}
-            <a
-              href={loc.mapUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block px-14 py-1 bg-[#A65324] text-white rounded-md shadow-[4px_4px_10px_rgba(0,0,0,0.3)] hover:bg-[#8B4513] transition-all duration-300 transform hover:-translate-y-1 active:translate-y-0"
-            >
-              Ver mapa
-            </a>
           </div>
         ))}
       </div>
