@@ -2,102 +2,225 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import styles from "./HeroEnvelope.module.css";
 
 export default function HeroEnvelope() {
-  const [open, setOpen] = useState(false);
-  const [zoom, setZoom] = useState(false);
-
+  const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
 
   const handleOpen = () => {
-    setOpen(true);
+    if (isOpen) return;
 
-    setTimeout(() => {
-      setZoom(true);
-    }, 1500);
+    setIsOpen(true);
 
     setTimeout(() => {
       router.push("/invitacion");
-    }, 2800);
+    }, 500);
   };
 
   return (
-    <main className="min-h-screen bg-[#f7dcb97d] flex flex-col items-center justify-center p-6 font-wedding">
-      
-      {/* TOP */}
-      <header className="text-center animate-fade-in">
-        <p className="text-[#333] text-2xl italic tracking-wide mb-6">
-          Los rumores son ciertos
-        </p>
+    <>
+      <style>{`
+        html, body {
+          margin: 0;
+          background: #f4ede4;
+          overflow: hidden;
+        }
 
-        <h1 className="text-[#333] text-4xl tracking-[0.2em] uppercase">
-          ¡Nos Casamos!
-        </h1>
-      </header>
+        .perspective-parent {
+          perspective: 3000px;
+        }
 
-      {/* SOBRE */}
-      <div className={styles.letterWrapper}>
-        <div className={styles.letter}>
-          <div className={styles.envelope} onClick={handleOpen}>
+        /* TAPA */
+        .flap-3d {
+          transform-origin: top center;
+          transition:
+            transform 2.2s cubic-bezier(0.22, 1, 0.36, 1),
+            opacity 1.5s ease;
+          will-change: transform;
+          z-index: 40;
+        }
 
-            {/* TAPA */}
-            <svg
-              className={`${styles.cover} ${open ? styles.open : ""}`}
-              viewBox="0 0 500 300"
-            >
-              <path d="M 0 0 L 500 0 L 275 150 Q 250 175 225 150 L 0 0 Z" />
+        .flap-3d.open {
+          transform: rotateX(58deg) translateY(-2%);
+        }
 
-              <foreignObject x="185" y="10" width="130" height="130">
-                <div className="w-full flex justify-center">
+        /* FOTO */
+        .background-photo {
+          transition:
+            transform 2.6s cubic-bezier(0.22, 1, 0.36, 1),
+            opacity 2s ease,
+            filter 2s ease;
+        }
+
+        .background-photo.show {
+          transform: scale(1.03);
+          opacity: 1;
+          filter: blur(0px);
+        }
+      `}</style>
+
+      <main className="min-h-screen bg-[#f4ede4] flex items-center justify-center px-6">
+
+        {/* CONTENEDOR CENTRAL */}
+        <div className="flex flex-col items-center">
+
+        {/* SOBRE */}
+        <div
+          onClick={handleOpen}
+          className="
+            relative
+            w-[340px]
+            h-[620px]
+            cursor-pointer
+            select-none
+            perspective-parent
+            pb-10
+          "
+        >
+
+          {/* BASE */}
+          <div className="absolute inset-0 z-20 pointer-events-none">
+            <img
+              src="/envelope/1_carta.png"
+              alt="Sobre"
+              className="w-full h-full object-contain"
+            />
+          </div>
+
+          {/* TAPA */}
+          <div
+            className={`
+              absolute
+              top-[-12%]
+              left-1/2
+              -translate-x-1/2
+              w-[120%]
+              h-[350px]
+              pointer-events-none
+              flap-3d
+              ${isOpen ? "open" : ""}
+            `}
+          >
+              <div className="relative w-full h-full">
+
+                <img
+                  src="/envelope/2_hd_tapa.png"
+                  alt="Tapa"
+                  className="
+                    w-full
+                    h-full
+                    object-contain
+                    drop-shadow-[0_30px_45px_rgba(0,0,0,0.12)]
+                  "
+                />
+
+                {/* INICIALES */}
+                <div
+                  className={`
+                    absolute
+                    inset-0
+                    flex
+                    items-center
+                    justify-center
+                    transition-all
+                    duration-[1200ms]
+                    ${
+                      isOpen
+                        ? "opacity-0 scale-90"
+                        : "opacity-100 scale-100"
+                    }
+                  `}
+                >
                   <img
                     src="/envelope/iniciales.png"
                     alt="Iniciales"
-                    className="w-22 object-contain"
+                    className="
+                      w-32
+                      object-contain
+                      -mt-4
+                    "
                   />
                 </div>
-              </foreignObject>
-            </svg>
+              </div>
+            </div>
 
             {/* SELLO */}
             <div
-              className={`absolute top-1/2 pb-12 left-1/2 -translate-x-1/2 -translate-y-1/2 z-14 duration-700 
-              ${styles.sealPulse}
-              ${
-                open
-                  ? "opacity-0 scale-150 pointer-events-none"
-                  : "opacity-100"
-              }`}
+              className={`
+                absolute
+                left-1/2
+                top-[55%]
+                -translate-x-1/2
+                -translate-y-1/2
+                z-[60]
+                transition-all
+                duration-[1000ms]
+                ease-out
+                flex
+                flex-col
+                items-center
+                ${
+                  isOpen
+                    ? "opacity-0 scale-75 pointer-events-none"
+                    : "opacity-100 scale-100"
+                }
+              `}
             >
-              <img
-                src="/envelope/sello.png"
-                alt="Sello"
-                className="w-28 h-28 object-contain drop-shadow-md"
-              />
-            </div>
+              <div className="relative flex flex-col items-center">
 
-            {/* CARTA */}
-            <div
-              className={`${styles.letterSheet} ${
-                zoom ? styles.letterUp : ""
-              } ${zoom ? styles.zoomIn : ""}`}
-            >
-              <img
-                src="/envelope/imagen_1.jpg"
-                alt="Boda"
-                className="w-72 h-auto mix-blend-multiply opacity-90"
-              />
+                {/* SELLO IMG */}
+                <div
+                  className="
+                    relative
+                    w-40
+                    h-40
+                    flex
+                    items-center
+                    justify-center
+                    drop-shadow-[0_12px_30px_rgba(0,0,0,0.22)]
+                  "
+                >
+                  <img
+                    src="/envelope/sello.png"
+                    alt="Sello"
+                    className="
+                      w-full
+                      h-full
+                      object-contain
+                      select-none
+                      pointer-events-none
+                    "
+                  />
+                </div>
+
+                {/* TEXTO */}
+                <div
+                  className="
+                    text-[#8c7a6b]
+                    text-[11px]
+                    font-bold
+                    tracking-[0.45em]
+                    uppercase
+                    whitespace-nowrap
+                    bg-[#faf8f5]/90
+                    px-5
+                    py-2
+                    rounded-full
+                    border
+                    border-[#e8dfd5]
+                    shadow-lg
+                    mt-2
+                  "
+                >
+                  Click para abrir
+                </div>
+
+              </div>
             </div>
           </div>
-        </div>
-      </div>
 
-      {/* BOTTOM */}
-      <footer className="text-center">
-        <h2 className="text-[#333] text-3xl tracking-[0.3em] uppercase">
-          Daniela & Cristian
-        </h2>
-      </footer>
-    </main>
+        </div>
+      </main>
+    </>
   );
 }
