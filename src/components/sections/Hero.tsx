@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useRef, useState } from "react";
 import { Play, Pause, RotateCcw } from "lucide-react";
+import "@/components/sections/Hero.module.css";
 
 export default function Hero() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -30,7 +31,6 @@ export default function Hero() {
 
   return (
     <section className="border-b-1 relative h-screen w-full overflow-hidden flex flex-col items-center justify-start pt-20 md:pt-18">
-
       {/* AUDIO */}
       <audio ref={audioRef} loop>
         {/* Cambia esta canción por la tuya */}
@@ -106,7 +106,24 @@ export default function Hero() {
         </div>
 
         {/* REPRODUCTOR */}
-        <div className="mt-[24rem] md:mt-72 flex items-center gap-4 bg-white/10 backdrop-blur-md border border-white/20 px-5 py-3 rounded-full shadow-2xl">
+        <div
+          className="
+            mt-[28rem]
+            md:mt-[15rem]
+            min-[1600px]:mt-16
+            flex
+            items-center
+            gap-4
+            bg-white/10
+            backdrop-blur-md
+            border
+            border-white/20
+            px-5
+            py-3
+            rounded-full
+            shadow-2xl
+          "
+        >
 
           {/* Play / Pause */}
           <button
