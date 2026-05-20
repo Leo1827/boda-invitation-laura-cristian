@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function Message() {
   return (
-    <section className="relative bg-[#f3f0e9] w-full py-20 overflow-hidden flex items-center justify-center min-h-[350px]">
+    <section className="relative w-full py-20 overflow-hidden flex items-center justify-center min-h-[450px]">
       
       {/* 
         Este es el gradiente de desvanecido.
@@ -26,14 +26,14 @@ export default function Message() {
         whileInView={{ opacity: 0.9, x: -60 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
         viewport={{ once: true }}
-        className="absolute left-0 top-1/2 -translate-y-1/2 w-32 md:w-32 lg:w-42 select-none"
+        className="absolute left-0 top-1/4 pb-8 -translate-y-1/2 w-38 md:w-32 lg:w-42 select-none"
       >
         <Image 
-          src="/envelope/florCinco.png" 
+          src="/envelope/palmera2.png" 
           alt="Decoración floral izquierda"
           width={500}
           height={500}
-          className="ml-6 w-72 h-auto object-contain"
+          className="ml-2 w-100 h-auto object-contain opacity-50"
         />
       </motion.div>
 
@@ -61,16 +61,33 @@ export default function Message() {
         whileInView={{ opacity: 0.9, x: 0 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
         viewport={{ once: true }}
-        className="absolute right-1 top-1/2 -translate-y-1/2 w-32 md:w-48 lg:w-64 select-none"
+        className="absolute right-1 top-1/2 -translate-y-1/2 w-32 md:w-48 lg:w-78 select-none"
       >
         <Image
-          src="/envelope/flor5.png" 
+          src="/envelope/palmera1.png" 
           alt="Decoración floral derecha"
           width={500}
           height={500}
-          className="w-52 ml-12 md:ml-28 h-auto object-contain"
+          className="w-52 ml-10 pb-52 md:w-32 md:pb-0 md:ml-52 h-auto object-contain opacity-70"
         />
       </motion.div>
+
+      {/* ARENA PLAYA */}
+      <div className="absolute  bottom-0 left-0 w-full pointer-events-none z-[1]">
+        <Image
+          src="/envelope/arena1.png"
+          alt="Arena playa"
+          width={1920}
+          height={400}
+          className="
+            w-full
+            h-full
+            object-cover
+            object-bottom
+            opacity-32
+          "
+        />
+      </div>
     </section>
   );
 }
