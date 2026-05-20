@@ -67,7 +67,7 @@ export default function Hero() {
         >
           <Image
             src="/envelope/imagen_1.jpg"
-            alt="Daniela y Cristian"
+            alt="Cristian & Daniela"
             fill
             priority
             className="
@@ -91,11 +91,11 @@ export default function Hero() {
 
         <h1 className="flex flex-col items-center gap-2 drop-shadow-lg font-[family-name:var(--font-cormorant)]">
           <span className="text-5xl md:text-6xl font-light tracking-widest uppercase">
-            Daniela &
+            Cristian &
           </span>
 
           <span className="text-5xl md:text-6xl font-light tracking-widest uppercase">
-            Cristian
+            Daniela
           </span>
         </h1>
 

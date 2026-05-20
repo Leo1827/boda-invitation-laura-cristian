@@ -3,7 +3,7 @@
 import { useCountdown } from "@/hooks/useCountdown";
 
 export default function Countdown() {
-  const time = useCountdown("2026-06-27T16:00:00");
+  const time = useCountdown("2026-08-08T16:00:00");
 
   const days = Math.floor(time / (1000 * 60 * 60 * 24));
   const hours = Math.floor((time / (1000 * 60 * 60)) % 24);

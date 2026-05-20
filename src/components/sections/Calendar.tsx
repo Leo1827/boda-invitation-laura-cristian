@@ -3,8 +3,13 @@ import { motion } from "framer-motion";
 
 export default function CalendarSection() {
   const daysOfWeek = ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"];
-  const days = Array.from({ length: 30 }, (_, i) => i + 1);
-  const eventDay = 27;
+  const days = Array.from({ length: 31 }, (_, i) => i + 1);
+    /*
+    Agosto 2026 empieza en sábado.
+    Dom=0 Lun=1 Mar=2 Mié=3 Jue=4 Vie=5 Sáb=6
+    */
+  const firstDayOffset = 6;
+  const eventDay = 8;
 
   return (
     <section className="relative bg-[#f3f0e9] md:py-16 px-6 md:px-12 overflow-hidden font-[family-name:var(--font-cormorant)]">
@@ -33,7 +38,7 @@ export default function CalendarSection() {
                     El Gran Día
                 </h2>
                 <span className="text-4xl md:text-5xl font-[family-name:var(--font-pinyon)] lowercase family-cursive">
-                    Junio
+                    Agosto
                 </span>
 
                 {/* Calendario */}
@@ -42,20 +47,39 @@ export default function CalendarSection() {
                         {daysOfWeek.map(day => <div key={day}>{day}</div>)}
                     </div>
                 
-                    <div className="grid border-t grid-cols-7 text-center gap-y-2 text-lg">
+                    <div className="grid border-t grid-cols-7 text-center text-lg">
+
+                        {/* ESPACIOS VACÍOS */}
+                        {Array.from({ length: firstDayOffset }).map((_, i) => (
+                            <div key={`empty-${i}`} />
+                        ))}
+
+                        {/* DÍAS */}
                         {days.map(day => (
-                        <div key={day} className="relative flex justify-center items-center">
-                            <span className={`${day === eventDay ? 'z-10 text-white' : 'text-zinc-700'}`}>
-                            {day}
+                            <div
+                            key={day}
+                            className="relative flex justify-center items-center h-8"
+                            >
+                            <span
+                                className={`
+                                relative z-10
+                                ${day === eventDay ? "text-white" : "text-zinc-700"}
+                                `}
+                            >
+                                {day}
                             </span>
+
                             {day === eventDay && (
-                            <div className="absolute inset-0 flex justify-center items-center">
-                                <svg viewBox="0 0 23 23" className="w-8 h-8 fill-[#A64D1B]">
-                                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                                <div className="absolute inset-0 flex justify-center items-center">
+                                <svg
+                                    viewBox="0 0 23 23"
+                                    className="w-8 h-8 fill-[#A64D1B]"
+                                >
+                                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
                                 </svg>
-                            </div>
+                                </div>
                             )}
-                        </div>
+                            </div>
                         ))}
                     </div>
                 </div>

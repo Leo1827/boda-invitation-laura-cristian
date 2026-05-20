@@ -14,7 +14,7 @@ const locations = [
   },
   {
     title: "RECEPCIÓN",
-    time: "7:30 PM",
+    time: "6:00 PM",
     place: "Hacienda San Nicolás",
     mapUrl: "#",
     icon: (
