@@ -96,7 +96,7 @@ export default function CalendarSection() {
                 {/* Imagen Principal en Arco */}
                 <div className="relative w-64 h-96 md:w-70 md:h-[450px] overflow-hidden rounded-full shadow-lg">
                 <img 
-                    src="https://framerusercontent.com/images/abaLQ4Kzbz9hqZ62puuSyXfb1Y.jpg?scale-down-to=1024&width=1280&height=1920" 
+                    src="/envelope/image_iglesia.jpg" 
                     alt="El Beso" 
                     className="object-cover w-full h-full"
                 />
@@ -105,7 +105,7 @@ export default function CalendarSection() {
                 {/* Imagen Secundaria Flotante */}
                 <div className="absolute right-2 md:right-0 w-40 h-52 md:w-48 md:h-64 overflow-hidden shadow-2xl border-4 border-white z-20">
                 <img 
-                    src="https://framerusercontent.com/images/4FMEJGzrYIoK5h7b4sAvhUoQCG0.jpg?scale-down-to=1024&width=1920&height=2880" 
+                    src="/envelope/image_5.jpg" 
                     alt="Detalle" 
                     className="object-cover w-full h-full"
                 />
