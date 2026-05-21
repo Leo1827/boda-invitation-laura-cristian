@@ -1,25 +1,22 @@
 "use client";
+import { motion } from "framer-motion";
 
-import { useCountdown } from "@/hooks/useCountdown";
 
 export default function Countdown() {
-  const time = useCountdown("2026-08-08T16:00:00");
 
-  const days = Math.floor(time / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((time / (1000 * 60 * 60)) % 24);
-  const minutes = Math.floor((time / 1000 / 60) % 60);
-  const seconds = Math.floor((time / 1000) % 60);
+    const daysOfWeek = ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"];
+  const days = Array.from({ length: 31 }, (_, i) => i + 1);
+    /*
+    Agosto 2026 empieza en sábado.
+    Dom=0 Lun=1 Mar=2 Mié=3 Jue=4 Vie=5 Sáb=6
+    */
+  const firstDayOffset = 6;
+  const eventDay = 8;
 
-  const timeUnits = [
-    { label: "Días", value: days },
-    { label: "Horas", value: hours },
-    { label: "Min", value: minutes },
-    { label: "Seg", value: seconds },
-  ];
 
   return (
     // Añadimos 'relative' y un overflow hidden para el pseudo-elemento
-    <section className="bg-[#deb98860] text-[peru] pb-42 pt-10 px-4 flex flex-col items-center justify-center font-[family-name:var(--font-cormorant)] relative overflow-hidden">
+    <section className="bg-[#deb98860] text-[peru] pb-14 pt-10 px-4 flex flex-col items-center justify-center font-[family-name:var(--font-cormorant)] relative overflow-hidden">
 
       {/* 
         Este es el gradiente de desvanecido.
@@ -34,25 +31,65 @@ export default function Countdown() {
         aria-hidden="true"
       />
 
-      {/* Añadimos z-10 para que el texto esté por encima de la sección, pero por debajo del inicio del gradiente si este es muy alto */}
-      <div className="flex flex-col items-center justify-center relative z-10">
-        <h2 className="font-[family-name:var(--font-pinyon)] italic text-5xl md:text-5xl mb-2 opacity-90 font-light tracking-[0.2em]">
-          Faltan
-        </h2>
-        
-        <div className="flex gap-6 md:gap-12">
-          {timeUnits.map((unit) => (
-            <div key={unit.label} className="flex flex-col items-center">
-              <span className="text-4xl md:text-6xl font-light mb-2 leading-none">
-                {unit.value.toString().padStart(2, '0')}
-              </span>
-              <span className="text-xs md:text-sm uppercase tracking-widest opacity-80">
-                {unit.label}
-              </span>
+        <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="flex flex-col items-center text-[#A64D1B]"
+        >
+            <h2 className="text-3xl md:text-4xl leading-2 uppercase font-light mb-0 ">
+                El Gran Día
+            </h2>
+            <span className="text-5xl md:text-5xl font-[family-name:var(--font-pinyon)] lowercase family-cursive">
+                Agosto
+            </span>
+
+            {/* Calendario */}
+            <div className="w-full mb-8 md:max-w-sm border-t border-b border-[#A64D1B]/30 py-2">
+                <div className="grid grid-cols-7 text-center mb-2 text-sm tracking-wider font-bold">
+                    {daysOfWeek.map(day => <div key={day}>{day}</div>)}
+                </div>
+            
+                <div className="grid border-t grid-cols-7 text-center text-lg">
+
+                    {/* ESPACIOS VACÍOS */}
+                    {Array.from({ length: firstDayOffset }).map((_, i) => (
+                        <div key={`empty-${i}`} />
+                    ))}
+
+                    {/* DÍAS */}
+                    {days.map(day => (
+                        <div
+                        key={day}
+                        className="relative flex justify-center items-center h-8"
+                        >
+                        <span
+                            className={`
+                            relative z-10
+                            ${day === eventDay ? "text-white" : "text-zinc-700"}
+                            `}
+                        >
+                            {day}
+                        </span>
+
+                        {day === eventDay && (
+                            <div className="absolute inset-0 flex justify-center items-center">
+                            <svg
+                                viewBox="0 0 23 23"
+                                className="w-8 h-8 fill-[#A64D1B]"
+                            >
+                                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                            </div>
+                        )}
+                        </div>
+                    ))}
+                </div>
             </div>
-          ))}
-        </div>
-      </div>
+        </motion.div>
+
+
     </section>
   );
 }
