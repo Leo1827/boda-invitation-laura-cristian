@@ -39,11 +39,23 @@ export default function Location() {
       {/* Plameras decorativas - Esquinas (Usa tus archivos PNG con transparencia) */}
       <div className="absolute -top-8 -left-18 w-48 h-48 md:w-64 md:h-64 opacity-80 pointer-events-none rotate-50">
           <img src="/envelope/palmera1.png" 
-              alt="" className="object-contain w-full h-full" />
+              alt="" className="object-contain w-full h-full 
+                        sepia-[0.25]
+                        saturate-[0.65]
+                        brightness-[1.08]
+                        contrast-[0.88]
+                        hue-rotate-[2deg]
+                        opacity-30" />
       </div>
 
       <div className="absolute top-0 -right-18 w-48 h-48 md:w-64 md:h-64 opacity-80 pointer-events-none rotate-180">
-          <img src="/envelope/palmera2.png" alt="" className="object-contain w-full h-full" />
+          <img src="/envelope/palmera2.png" alt="" className="object-contain w-full h-full
+                        sepia-[0.25]
+                        saturate-[0.65]
+                        brightness-[1.08]
+                        contrast-[0.88]
+                        hue-rotate-[2deg]
+                        opacity-30" />
       </div>
 
       <div className="absolute bottom-0 -right-24 w-48 h-48 md:w-64 md:h-64 opacity-70 mr-8 pointer-events-none">

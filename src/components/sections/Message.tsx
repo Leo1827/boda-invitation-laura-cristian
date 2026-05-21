@@ -33,7 +33,12 @@ export default function Message() {
           alt="Decoración floral izquierda"
           width={500}
           height={500}
-          className="ml-2 w-100 h-auto object-contain opacity-50"
+          className="ml-2 w-100 h-auto sepia-[0.25]
+          saturate-[0.65]
+          brightness-[1.08]
+          contrast-[0.88]
+          hue-rotate-[2deg]
+          opacity-40"
         />
       </motion.div>
 
@@ -68,12 +73,17 @@ export default function Message() {
           alt="Decoración floral derecha"
           width={500}
           height={500}
-          className="w-52 ml-10 pb-52 md:w-32 md:pb-0 md:ml-52 h-auto object-contain opacity-70"
+          className="w-52 ml-10 pb-52 md:w-32 md:pb-0 md:ml-52 h-auto sepia-[0.25]
+              saturate-[0.65]
+              brightness-[1.08]
+              contrast-[0.88]
+              hue-rotate-[2deg]
+              opacity-40"
         />
       </motion.div>
 
       {/* ARENA PLAYA */}
-      <div className="absolute  bottom-0 left-0 w-full pointer-events-none z-[1]">
+      <div className="absolute bottom-0 left-0 w-full pointer-events-none z-[1]">
         <Image
           src="/envelope/arena1.png"
           alt="Arena playa"
@@ -82,9 +92,12 @@ export default function Message() {
           className="
             w-full
             h-full
-            object-cover
-            object-bottom
-            opacity-32
+            sepia-[0.25]
+            saturate-[0.65]
+            brightness-[1.08]
+            contrast-[0.88]
+            hue-rotate-[2deg]
+            opacity-20
           "
         />
       </div>
