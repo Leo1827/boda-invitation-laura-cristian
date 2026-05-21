@@ -56,7 +56,7 @@ export default function Message() {
         
         <p className="text-[#a6603f] font-[family-name:var(--font-pinyon)] text-2xl md:text-4xl lg:text-3xl px-8 md:px-14">
           “Mejores son dos que uno… porque si cayera el uno, levantará al otro… y cordón de tres dobleces no se romperá.”
-            — Eclesiastés 3:1 & 4:9-12
+            <br/>— Eclesiastés 3:1 & 4:9-12
         </p>
       </motion.div>
 
