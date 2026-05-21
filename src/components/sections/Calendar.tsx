@@ -106,16 +106,31 @@ export default function CalendarSection() {
                 className="relative flex justify-center items-end h-[400px] md:h-[450px] w-full"
             >
                 {/* Imagen Principal en Arco */}
-                <div className="relative w-64 h-96 md:w-70 md:h-[450px] overflow-hidden rounded-full shadow-lg">
-                <img 
-                    src="/envelope/image_iglesia.webp" 
-                    alt="El Beso" 
-                    className="object-cover w-full h-full"
-                />
+                <div className="relative w-52 mr-16 h-96 md:w-70 md:h-[450px] overflow-hidden rounded-full shadow-lg">
+                    <img 
+                        src="/envelope/image_iglesia.webp" 
+                        alt="El Beso" 
+                        className="object-cover w-full h-full"
+                    />
                 </div>
 
                 {/* Imagen Secundaria Flotante */}
-                <div className="absolute right-2 md:right-0 w-40 h-52 md:w-48 md:h-64 overflow-hidden shadow-2xl border-4 border-white z-20">
+                <div className="
+                        absolute
+                        right-1
+                        md:right-0
+                        bottom-4
+                        md:bottom-0
+                        w-40
+                        h-52
+                        md:w-48
+                        md:h-64
+                        overflow-hidden
+                        shadow-2xl
+                        border-4
+                        border-white
+                        z-20
+                        ">
                 <img 
                     src="/envelope/image_5.webp" 
                     alt="Detalle" 
