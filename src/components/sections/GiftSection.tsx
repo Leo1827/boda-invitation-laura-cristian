@@ -29,7 +29,7 @@ export default function GiftSection() {
       {/* =====================================================
          SECTION
       ===================================================== */}
-      <section className="relative w-full py-28 px-6 bg-[#F5F2ED] overflow-hidden">
+      <section className="relative w-full pt-8 pb-20 px-6 bg-[#F5F2ED] overflow-hidden">
 
         {/* CONTENIDO */}
         <div className="max-w-3xl mx-auto text-center">
@@ -39,22 +39,12 @@ export default function GiftSection() {
             Regalos
           </span>
 
-          {/* TÍTULO */}
-          <h2 className="text-4xl md:text-6xl italic font-light text-[#4A4A4A] mb-6 font-[family-name:var(--font-cormorant)]">
-            Su presencia es nuestro mejor regalo
-          </h2>
-
-          {/* DESCRIPCIÓN */}
-          <p className="text-[#6A6A6A] text-base md:text-lg leading-relaxed max-w-2xl mx-auto font-light">
-            Hemos preparado este día con mucha ilusión y felicidad.
-          </p>
-
           {/* ICONO / BOTÓN */}
           <button
             onClick={handleOpenModal}
             className="
               group
-              mt-12
+              mt-4
               flex
               flex-col
               items-center
@@ -103,30 +93,35 @@ export default function GiftSection() {
             </div>
 
             {/* TEXTO */}
-            <span className="mt-5 text-[#B47C54] tracking-[0.25em] uppercase text-sm">
+            <span className="my-5 text-[#B47C54] tracking-[0.25em] uppercase text-sm">
               Ver mensaje
             </span>
           </button>
+
+          {/* TÍTULO */}
+          <h2 className="text-4xl mx-3 md:text-6xl italic font-light text-[#4A4A4A] mb-8 font-[family-name:var(--font-cormorant)]">
+            Su presencia es nuestro mejor regalo
+          </h2>
         </div>
 
-{/* =====================================================
-   DESVANECIDO HACIA BLANCO
-===================================================== */}
-<div
-  className="
-    absolute
-    bottom-0
-    left-0
-    w-full
-    h-40
-    pointer-events-none
-    bg-gradient-to-b
-    from-transparent
-    via-[#F5F2ED]
-    to-white
-    z-10
-  "
-/>
+    {/* =====================================================
+      DESVANECIDO HACIA BLANCO
+    ===================================================== */}
+    <div
+      className="
+        absolute
+        bottom-0
+        left-0
+        w-full
+        h-40
+        pointer-events-none
+        bg-gradient-to-b
+        from-transparent
+        via-[#F5F2ED]
+        to-white
+        z-10
+      "
+    />
       </section>
 
       {/* =====================================================
