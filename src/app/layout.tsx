@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { Cormorant_Garamond, Pinyon_Script, Playfair_Display, Cinzel_Decorative } from 'next/font/google'; // Importamos la nueva fuente Cinzel_Decorative
 import '@/styles/globals.css';
 import PageTransition from '@/components/PageTransition';
+import Preloader from "@/components/sections/Preloader";
 
 const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
@@ -49,6 +50,7 @@ export default function RootLayout({
     <html lang="es" className={`${cormorant.variable} ${pinyonScript.variable} ${playfair.variable} ${cinzelDecorative.variable}`}>
       <body className="antialiased font-cormorant"> {/* Opcional: establecer cormorant como fuente predeterminada */}
         <PageTransition>
+          <Preloader />
           {children}
         </PageTransition>
       </body>
