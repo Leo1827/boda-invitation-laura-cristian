@@ -57,17 +57,22 @@ export default function FooterSection() {
       =================================================== */}
       <div
         className="
-          absolute
-          inset-0
-          bg-cover
-          bg-center
-          bg-fixed
+            absolute
+            inset-0
+            bg-cover
+            bg-center
+            bg-fixed
+            sepia-[0.28]
+            saturate-[0.75]
+            brightness-[0.82]
+            contrast-[0.9]
+            hue-rotate-[-8deg]
         "
         style={{
-          backgroundImage: "url('/envelope/fondo_footer.png')",
-          backgroundPosition: "right",
+            backgroundImage: "url('/envelope/fondo_footer.png')",
+            backgroundPosition: "right",
         }}
-      >
+        >
 
         {/* OVERLAY */}
         <div className="absolute inset-0 bg-white/30" />
