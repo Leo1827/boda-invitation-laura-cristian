@@ -3,10 +3,10 @@ import Countdown from "@/components/sections/Countdown";
 import Calendar from "@/components/sections/Calendar";
 import Location from "@/components/sections/Location";
 import DressCode from "@/components/sections/Dresscode";
-import NoGifts from "@/components/sections/NoGifts";
 import Confirmation from "@/components/sections/Confirmation";
 import Message from "@/components/sections/Message";
 import ImageParallax from "@/components/sections/ImageParallax";
+import GiftSection from "@/components/sections/GiftSection";
 
 export default function Invitacion() {
   return (
@@ -18,7 +18,7 @@ export default function Invitacion() {
       <ImageParallax />
       <Location />
       <DressCode />
-      <NoGifts />
+      <GiftSection />
       <Confirmation />
     </main>
   );
