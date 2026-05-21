@@ -109,20 +109,24 @@ export default function GiftSection() {
           </button>
         </div>
 
-        {/* DESVANECIDO */}
-        <div
-          className="
-            absolute
-            bottom-0
-            left-0
-            right-0
-            h-32
-            bg-gradient-to-t
-            from-[#deb98830]
-            to-transparent
-            pointer-events-none
-          "
-        />
+{/* =====================================================
+   DESVANECIDO HACIA BLANCO
+===================================================== */}
+<div
+  className="
+    absolute
+    bottom-0
+    left-0
+    w-full
+    h-40
+    pointer-events-none
+    bg-gradient-to-b
+    from-transparent
+    via-[#F5F2ED]
+    to-white
+    z-10
+  "
+/>
       </section>
 
       {/* =====================================================
