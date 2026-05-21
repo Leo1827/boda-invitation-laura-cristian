@@ -37,7 +37,7 @@ export default function Hero() {
         <source src="/music/song.mp3" type="audio/mpeg" />
       </audio>
 
-      {/* Fondo del mar */}
+      {/* Fondo*/}
       <div className="absolute inset-0 -z-20">
         <Image
           src="/envelope/imagen_2.jpg"

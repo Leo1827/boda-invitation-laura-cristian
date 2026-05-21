@@ -7,6 +7,7 @@ import Confirmation from "@/components/sections/Confirmation";
 import Message from "@/components/sections/Message";
 import ImageParallax from "@/components/sections/ImageParallax";
 import GiftSection from "@/components/sections/GiftSection";
+import FooterSection from "@/components/sections/Footer";
 
 export default function Invitacion() {
   return (
@@ -20,6 +21,7 @@ export default function Invitacion() {
       <DressCode />
       <GiftSection />
       <Confirmation />
+      <FooterSection />
     </main>
   );
 }
