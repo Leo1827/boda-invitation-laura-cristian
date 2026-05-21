@@ -30,7 +30,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="border-b-1 relative h-screen w-full overflow-hidden flex flex-col items-center justify-start pt-20 md:pt-18">
+    <section className=" relative h-screen w-full overflow-hidden flex flex-col items-center justify-start pt-20 md:pt-18">
       {/* AUDIO */}
       <audio ref={audioRef} loop>
         {/* Cambia esta canción por la tuya */}
@@ -60,7 +60,6 @@ export default function Hero() {
             md:w-[45%]
             md:h-[80%]
             overflow-hidden
-
             [mask-image:radial-gradient(ellipse_at_center,black_1%,rgba(0,0,0,0.95)_30%,rgba(0,0,0,0.65)_60%,rgba(0,0,0,0.25)_74%,transparent_88%)]
             [-webkit-mask-image:radial-gradient(ellipse_at_center,black_1%,rgba(0,0,0,0.95)_24%,rgba(0,0,0,0.65)_54%,rgba(0,0,0,0.25)_62%,transparent_72%)]
           "
@@ -85,7 +84,7 @@ export default function Hero() {
       {/* Texto */}
       <div className="relative z-10 text-white px-4 flex flex-col items-center">
 
-        <p className="font-[family-name:var(--font-pinyon)] italic text-4xl md:text-4xl mb-4 drop-shadow-md">
+        <p className="font-[family-name:var(--font-pinyon)] italic text-5xl md:text-5xl  drop-shadow-md">
           Nuestra boda
         </p>
 
@@ -173,6 +172,7 @@ export default function Hero() {
           </div>
         </div>
       </div>
+
     </section>
   );
 }

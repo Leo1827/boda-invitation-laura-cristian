@@ -36,7 +36,7 @@ export default function Countdown() {
 
       {/* Añadimos z-10 para que el texto esté por encima de la sección, pero por debajo del inicio del gradiente si este es muy alto */}
       <div className="flex flex-col items-center justify-center relative z-10">
-        <h2 className="text-3xl md:text-4xl uppercase mb-2 opacity-90 font-light tracking-[0.2em]">
+        <h2 className="font-[family-name:var(--font-pinyon)] italic text-5xl md:text-5xl mb-2 opacity-90 font-light tracking-[0.2em]">
           Faltan
         </h2>
         
