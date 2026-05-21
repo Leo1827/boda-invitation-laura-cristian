@@ -104,7 +104,7 @@ export default function Confirmation() {
       <div
         className="
           relative
-          h-[650px]
+          h-[550px]
           bg-cover
           bg-center
           flex
