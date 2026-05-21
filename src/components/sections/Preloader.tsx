@@ -4,17 +4,26 @@ import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 
 export default function Preloader() {
-  const [loading, setLoading] = useState(true);
   const [mounted, setMounted] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setMounted(true);
+    const raf = requestAnimationFrame(() => {
+      setMounted(true);
+    });
+
+    document.body.style.overflow = "hidden";
 
     const timer = setTimeout(() => {
       setLoading(false);
+      document.body.style.overflow = "";
     }, 2200);
 
-    return () => clearTimeout(timer);
+    return () => {
+      cancelAnimationFrame(raf);
+      clearTimeout(timer);
+      document.body.style.overflow = "";
+    };
   }, []);
 
   if (!mounted || !loading) return null;
@@ -24,6 +33,7 @@ export default function Preloader() {
       className="
         fixed
         inset-0
+        isolate
         z-[999999]
         bg-[#F5F2ED]
         flex
@@ -32,12 +42,14 @@ export default function Preloader() {
         justify-center
       "
     >
+      {/* Loader */}
       <div className="relative w-20 h-20">
         <div className="absolute inset-0 rounded-full border border-[#B47C54]/20" />
 
         <div className="absolute inset-0 rounded-full border-t border-[#B47C54] animate-spin" />
       </div>
 
+      {/* Texto */}
       <div className="mt-8 text-center">
         <p className="text-[#B47C54] uppercase tracking-[0.4em] text-xs mb-3">
           Nuestra boda

@@ -49,8 +49,9 @@ export default function RootLayout({
     // Agregamos la nueva variable cinzelDecorative.variable a la clase del html
     <html lang="es" className={`${cormorant.variable} ${pinyonScript.variable} ${playfair.variable} ${cinzelDecorative.variable}`}>
       <body className="antialiased font-cormorant"> {/* Opcional: establecer cormorant como fuente predeterminada */}
+        <Preloader />
         <PageTransition>
-          <Preloader />
+          
           {children}
         </PageTransition>
       </body>
