@@ -1,32 +1,46 @@
 "use client";
 
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
+
 interface ImageParallaxProps {
   imageUrl?: string;
-  height?: string; // Permite valores como '400px', '50vh', etc.
+  height?: string;
 }
 
-export default function ImageParallax({ 
-  imageUrl = "/envelope/imagen_3.webp", 
-  height = "400px" 
+export default function ImageParallax({
+  imageUrl = "/envelope/imagen_3.webp",
+  height = "400px",
 }: ImageParallaxProps) {
+  const ref = useRef<HTMLDivElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+
+  // Mantiene un efecto fuerte tipo "fixed"
+  const y = useTransform(scrollYProgress, [0, 1], [-120, 120]);
+
   return (
-    <section 
+    <section
+      ref={ref}
       className="relative w-full overflow-hidden bg-gray-900"
-      style={{ height: height }}
+      style={{ height }}
     >
-      <div
-        className="absolute  inset-0 w-full h-full"
+      <motion.div
         style={{
+          y,
           backgroundImage: `url('${imageUrl}')`,
-          backgroundAttachment: "fixed", // Clave para el efecto parallax clásico
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
         }}
+        className="absolute -top-32 -bottom-32 left-0 right-0"
       >
-        {/* Overlay opcional para mejorar legibilidad si luego decides poner texto */}
+        {/* Overlay */}
         <div className="absolute inset-0 bg-black/30" />
-      </div>
+      </motion.div>
     </section>
   );
 }

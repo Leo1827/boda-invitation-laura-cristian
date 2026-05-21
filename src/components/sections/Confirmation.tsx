@@ -30,7 +30,7 @@ export default function Confirmation() {
       body: JSON.stringify({ name }),
     });
 
-    alert("Confirmado 🎉");
+    alert("Confirmado");
   };
 
   return (
@@ -104,7 +104,7 @@ export default function Confirmation() {
       <div
         className="
           relative
-          h-[850px]
+          h-[650px]
           bg-cover
           bg-center
           flex
@@ -123,38 +123,10 @@ export default function Confirmation() {
         ================================================= */}
         <div className="relative z-30 text-center text-white px-6 max-w-4xl">
 
-          {/* TÍTULO */}
-          <h2
-            className="
-              text-3xl
-              md:text-5xl
-              font-light
-              leading-relaxed
-              font-[family-name:var(--font-cormorant)]
-            "
-          >
-            Lo más importante de este gran día es compartirlo con las personas que amamos.
-          </h2>
-
-          {/* TEXTO */}
-          <p
-            className="
-              max-w-2xl
-              mx-auto
-              mt-6
-              text-lg
-              md:text-xl
-              opacity-90
-              font-light
-            "
-          >
-            ¡Reserva la fecha! Estamos contando los días para celebrar juntos.
-          </p>
-
           {/* =================================================
              ICONO CALENDARIO
           ================================================= */}
-          <div className="flex justify-center mt-6">
+          <div className="flex justify-center">
 
             <svg
               className="w-16 h-16 text-[#bfa880] animate-pulse"
@@ -179,7 +151,7 @@ export default function Confirmation() {
             {/* INPUT */}
             <input
               type="text"
-              placeholder="Tu nombre"
+              placeholder="Nombre(s)"
               value={name}
               onChange={(e) => setName(e.target.value)}
               className="
@@ -247,17 +219,8 @@ export default function Confirmation() {
                 "
               />
 
-              {/* Icono WhatsApp */}
-              <svg
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                className="w-5 h-5 relative z-10"
-              >
-                <path d="M20.52 3.48A11.8 11.8 0 0012.07 0C5.52 0 .2 5.32.2 11.87c0 2.1.55 4.15 1.6 5.97L0 24l6.36-1.67a11.87 11.87 0 005.71 1.46h.01c6.55 0 11.87-5.32 11.87-11.87 0-3.17-1.23-6.15-3.43-8.44zM12.08 21.8a9.9 9.9 0 01-5.04-1.38l-.36-.21-3.77.99 1-3.67-.24-.38a9.88 9.88 0 01-1.52-5.28c0-5.46 4.44-9.9 9.91-9.9 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 012.9 7c0 5.46-4.44 9.9-9.9 9.9zm5.43-7.43c-.3-.15-1.76-.87-2.03-.96-.27-.1-.47-.15-.66.15-.2.3-.76.96-.94 1.15-.17.2-.35.22-.65.08-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.8-1.68-2.1-.18-.3-.02-.46.13-.6.14-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.08-.15-.66-1.6-.9-2.18-.24-.58-.48-.5-.66-.51h-.56c-.2 0-.53.08-.8.38-.27.3-1.04 1.01-1.04 2.47s1.06 2.88 1.2 3.08c.15.2 2.1 3.2 5.08 4.48.7.3 1.26.48 1.7.62.72.23 1.37.2 1.88.12.58-.09 1.76-.72 2.01-1.42.25-.7.25-1.3.18-1.42-.08-.12-.27-.2-.57-.35z" />
-              </svg>
-
               <span className="relative z-10">
-                Confirmar
+                Confirmar asistencia
               </span>
             </button>
           </div>
