@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 export default function Confirmation() {
-  const whatsappNumber = "573023120469"; // TU NÚMERO
+  const whatsappNumber = "573118557692"; // TU NÚMERO
 
   const handleWhatsAppConfirm = () => {
     if (!name.trim()) return;
