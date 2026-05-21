@@ -129,7 +129,7 @@ export default function Location() {
           />
         </div>
 
-        <div className="absolute top-52 mt-32 md:top-0 left-0 rotate-8 w-32 h-32 md:w-64 md:h-[680px] opacity-50 pointer-events-none">
+        <div className="absolute top-52 mt-32 md:top-52 left-0 rotate-8 w-32 h-32 md:w-64 md:h-[680px] opacity-50 pointer-events-none">
           <img
             src="/envelope/hojas_palmera.png"
             alt=""
@@ -223,7 +223,7 @@ export default function Location() {
 
               {/* Hora */}
               <div className="space-y-2 mb-2 font-light text-[#4A4A4A]">
-                <p className="text-2xl font-bold">{loc.time}</p>
+                <p className="text-2xl font-[family-name:var(--font-pinyon)]">{loc.time}</p>
               </div>
 
             </div>
