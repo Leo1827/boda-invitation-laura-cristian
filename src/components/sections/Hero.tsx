@@ -84,16 +84,16 @@ export default function Hero() {
       {/* Texto */}
       <div className="relative z-10 text-white px-4 flex flex-col items-center">
 
-        <p className="font-[family-name:var(--font-pinyon)] italic text-5xl md:text-5xl  drop-shadow-md">
-          Nuestra boda
+        <p className="font-[family-name:var(--font-cormorant)] uppercase text-3xl md:text-5xl  drop-shadow-md">
+          Nuestra boda 
         </p>
 
-        <h1 className="flex flex-col items-center gap-2 drop-shadow-lg font-[family-name:var(--font-cormorant)]">
-          <span className="text-5xl md:text-6xl font-light tracking-widest uppercase">
+        <h1 className="flex flex-col items-center gap-2 drop-shadow-lg font-[family-name:var(--font-pinyon)] italic">
+          <span className="text-5xl md:text-6xl font-light tracking-widest ">
             Cristian &
           </span>
 
-          <span className="text-5xl md:text-6xl font-light tracking-widest uppercase">
+          <span className="text-5xl md:text-6xl font-light tracking-widest ">
             Daniela
           </span>
         </h1>

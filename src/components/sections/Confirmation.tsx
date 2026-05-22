@@ -109,7 +109,7 @@ export default function Confirmation() {
           justify-center
         "
         style={{
-          backgroundImage: "url('/envelope/image_5.webp')",
+          backgroundImage: "url('/envelope/image_10.webp')",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
         }}

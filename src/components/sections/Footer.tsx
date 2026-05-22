@@ -79,7 +79,7 @@ export default function FooterSection() {
             hue-rotate-[-8deg]
           "
           style={{
-            backgroundImage: "url('/envelope/fondo_footer.png')",
+            backgroundImage: "url('/envelope/image_5.webp')",
           }}
         />
 
@@ -148,9 +148,9 @@ export default function FooterSection() {
         <p
           className="
             mt-4
-            text-xl
+            text-2xl
             md:text-5xl
-            text-gray-700
+            text-gray-900
             tracking-[0.3em]
             drop-shadow-sm
             font-light
