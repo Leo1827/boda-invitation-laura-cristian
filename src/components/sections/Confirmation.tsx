@@ -10,7 +10,7 @@ export default function Confirmation() {
 
     const message = `
       Hola ✨
-      Mi nombre es ${name} y deseo confirmar mi asistencia.
+      Hola deseo confirmar mi asistencia.
       Será un honor acompañarlos en este día tan especial 🤍
         `;
 
@@ -148,30 +148,6 @@ export default function Confirmation() {
           ================================================= */}
           <div className="mt-6 flex flex-col items-center gap-5">
 
-            {/* INPUT */}
-            <input
-              type="text"
-              placeholder="Nombre(s)"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              className="
-                w-full
-                max-w-md
-                bg-white/10
-                backdrop-blur-md
-                border
-                border-white/20
-                rounded-full
-                px-6
-                py-4
-                text-white
-                placeholder:text-white/60
-                outline-none
-                focus:border-[#bfa880]
-                transition
-              "
-            />
-
             {/* BOTÓN */}
             <button
               onClick={handleWhatsAppConfirm}
@@ -182,10 +158,10 @@ export default function Confirmation() {
                 overflow-hidden
                 bg-[#bfa880]
                 hover:bg-[#a88f6c]
-                disabled:bg-white/10
+                disabled:bg-white/20
                 disabled:border
                 disabled:border-white/10
-                disabled:text-white/40
+                disabled:text-white/80
                 text-black
                 px-10
                 py-4
@@ -238,7 +214,7 @@ export default function Confirmation() {
           preserveAspectRatio="none"
         >
           <path
-            fill="#F5F2ED"
+            fill="#fff"
             d="M0,64L80,74.7C160,85,320,107,480,106.7C640,107,800,85,960,69.3C1120,53,1280,43,1360,37.3L1440,32V0H0Z"
           />
         </svg>

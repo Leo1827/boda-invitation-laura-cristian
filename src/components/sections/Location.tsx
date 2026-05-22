@@ -140,7 +140,7 @@ export default function Location() {
         {/* ===================================================
            TÍTULO PRINCIPAL
         =================================================== */}
-        <div className="relative z-10 text-center mb-10">
+        <div className="relative z-10 text-center mb-4">
           <span className="text-[#B47C54] font-[family-name:var(--font-pinyon)] italic tracking-[0.3em] text-sm md:text-3xl block font-light">
             Donde comienza nuestra historia
           </span>
@@ -168,7 +168,7 @@ export default function Location() {
               onClick={handleOpenModal}
               className="
                 w-full
-                h-98
+                h-92
                 md:h-[500px]
                 object-contain
                 block
@@ -181,7 +181,7 @@ export default function Location() {
             ================================================= */}
             <div className="absolute bottom-6 md:top-32 top-16 mt-38 md:mt-10 right-2 md:right-10 text-black">
 
-              <p className="font-[family-name:var(--font-pinyon)] text-xl md:text-sm opacity-80">
+              <p className="font-[family-name:var(--font-pinyon)] text-xl md:text-4xl opacity-80">
                 Lugar
               </p>
 
@@ -301,7 +301,7 @@ export default function Location() {
 
               {/* GOOGLE MAPS */}
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18..."
+                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d114638.77882328567!2d-72.85021876778923!3d11.591005037238732!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTHCsDMzJzQyLjAiTiA3MsKwNTMnMjMuMiJX!5e1!3m2!1ses-419!2sco!4v1779407008625!5m2!1ses-419!2sco"
                 className="w-full h-[75vh]"
                 style={{ border: 0 }}
                 allowFullScreen
