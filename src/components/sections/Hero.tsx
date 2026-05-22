@@ -102,7 +102,7 @@ export default function Hero() {
           </h1>
         */}
         <div>
-          <img src="/envelope/logo1.png" className="w-72" alt="logo" />
+          <img src="/envelope/logo1.png" className="w-62 h-50" alt="logo" />
         </div>
 
         <div className="flex items-center justify-center w-4/5 mx-auto my-2">
