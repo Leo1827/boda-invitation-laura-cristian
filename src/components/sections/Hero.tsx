@@ -30,7 +30,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative h-[100svh] w-full overflow-hidden flex flex-col items-center justify-start pt-20 md:pt-18">
+    <section className="relative h-screen w-full overflow-hidden flex flex-col items-center justify-start pt-20 md:pt-18">
       {/* AUDIO */}
       <audio ref={audioRef} loop>
         {/* Cambia esta canción por la tuya */}
@@ -120,7 +120,7 @@ export default function Hero() {
         {/* REPRODUCTOR */}
         <div
           className="
-            mt-[24rem]
+            mt-[18rem]
             md:mt-[15rem]
             min-[1600px]:mt-16
             flex
