@@ -1,6 +1,6 @@
 // src/app/layout.tsx
 import type { Metadata } from 'next';
-import { Cormorant_Garamond, Pinyon_Script, Playfair_Display, Cinzel_Decorative } from 'next/font/google'; // Importamos la nueva fuente Cinzel_Decorative
+import { Cormorant_Garamond, Pinyon_Script, Playfair_Display, Ms_Madi } from 'next/font/google'; 
 import '@/styles/globals.css';
 import PageTransition from '@/components/PageTransition';
 import Preloader from "@/components/sections/Preloader";
@@ -27,11 +27,11 @@ const playfair = Playfair_Display({
   display: 'swap',
 });
 
-// Nueva fuente decorativa para los nombres
-const cinzelDecorative = Cinzel_Decorative({
-  weight: ['400', '700'], // Cinzel Decorative tiene pesos, podemos usar 400 y 700
+// Fuente Script moderna y fluida que imita el trazo manuscrito de la imagen
+const msMadi = Ms_Madi({
+  weight: '400',
   subsets: ['latin'],
-  variable: '--font-cinzel-decorative', // Definimos la variable CSS
+  variable: '--font-ms-madi', // Mapeamos la variable CSS
   display: 'swap',
 });
 
@@ -46,12 +46,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    // Agregamos la nueva variable cinzelDecorative.variable a la clase del html
-    <html lang="es" className={`${cormorant.variable} ${pinyonScript.variable} ${playfair.variable} ${cinzelDecorative.variable}`}>
-      <body className="antialiased font-cormorant"> {/* Opcional: establecer cormorant como fuente predeterminada */}
+    <html lang="es" className={`${cormorant.variable} ${pinyonScript.variable} ${playfair.variable} ${msMadi.variable}`}>
+      <body className="antialiased font-cormorant">
         <Preloader />
         <PageTransition>
-          
           {children}
         </PageTransition>
       </body>

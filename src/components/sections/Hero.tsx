@@ -84,24 +84,37 @@ export default function Hero() {
       {/* Texto */}
       <div className="relative z-10 text-white px-4 flex flex-col items-center">
 
-        <p className="font-[family-name:var(--font-cormorant)] uppercase text-3xl md:text-5xl  drop-shadow-md">
-          Nuestra boda 
-        </p>
+        {/* 
+          <p className="font-[family-name:var(--font-cormorant)] uppercase text-3xl md:text-5xl drop-shadow-md">
+            Nuestra boda 
+          </p>
 
-        <h1 className="flex flex-col items-center gap-2 drop-shadow-lg font-[family-name:var(--font-pinyon)] italic">
-          <span className="text-5xl md:text-6xl font-light tracking-widest ">
-            Cristian &
-          </span>
+          <h1 className="flex flex-col items-center mt-4 drop-shadow-lg font-[family-name:var(--font-ms-madi)] italic">
+            <span className="text-5xl md:text-6xl font-light tracking-widest ">
+              Cristian
+            </span>
+            <span className="text-4xl">
+              y
+            </span>
+            <span className="text-5xl md:text-6xl font-light tracking-widest ">
+              Daniela
+            </span>
+          </h1>
+        */}
+        <div>
+          <img src="/envelope/logo1.png" className="w-72" alt="logo" />
+        </div>
 
-          <span className="text-5xl md:text-6xl font-light tracking-widest ">
-            Daniela
-          </span>
-        </h1>
+        <div className="flex items-center justify-center w-4/5 mx-auto my-2">
+          <div className="flex-grow h-px bg-white/70"></div>
+          
+          <span className="px-4 text-white text-xl leading-none">♥</span>
+          
+          <div className="flex-grow h-px bg-white/70"></div>
+        </div>
 
-        <div className="mt-8 flex items-center gap-4 text-lg md:text-xl font-[family-name:var(--font-pinyon)] tracking-[0.2em] drop-shadow-md">
-          <span className="border-t border-white/80 w-8 md:w-12 block"></span>
+        <div className="mt-2 flex items-center gap-4 text-lg md:text-xl font-[family-name:var(--font-pinyon)] tracking-[0.4em] drop-shadow-md">
           08 · 08 · 2026
-          <span className="border-t border-white/80 w-8 md:w-12 block"></span>
         </div>
 
         {/* REPRODUCTOR */}

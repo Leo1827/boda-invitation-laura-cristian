@@ -154,11 +154,11 @@ export default function FooterSection() {
             tracking-[0.3em]
             drop-shadow-sm
             font-light
-            font-[family-name:var(--font-pinyon)]
+            font-[family-name:var(--font-ms-madi)]
             italic
           "
         >
-          Cristian & Daniela
+          Cristian y Daniela
         </p>
       </div>
 
