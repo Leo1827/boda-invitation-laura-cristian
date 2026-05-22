@@ -99,7 +99,7 @@ export default function CalendarSection() {
                         z-20
                         ">
                 <img 
-                    src="/envelope/image_5.webp" 
+                    src="/envelope/image_8.webp" 
                     alt="Detalle" 
                     className="object-cover w-full h-full"
                 />

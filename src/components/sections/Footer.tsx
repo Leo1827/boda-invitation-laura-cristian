@@ -2,7 +2,14 @@
 
 export default function FooterSection() {
   return (
-    <section className="relative w-full h-screen overflow-hidden">
+    <section
+      className="
+        relative
+        w-full
+        min-h-screen
+        overflow-hidden
+      "
+    >
 
       {/* ===================================================
          LÍNEAS DECORATIVAS SUPERIORES
@@ -51,31 +58,33 @@ export default function FooterSection() {
           />
         </svg>
       </div>
-
       {/* ===================================================
-         FONDO PRINCIPAL
+        FONDO PRINCIPAL
       =================================================== */}
-      <div
-        className="
+      <div className="absolute inset-0 overflow-hidden">
+
+        <div
+          className="
             absolute
             inset-0
             bg-cover
             bg-center
-            bg-fixed
+            will-change-transform
+            scale-110
+            parallax-mobile
             sepia-[0.28]
             saturate-[0.75]
             brightness-[0.82]
             contrast-[0.9]
             hue-rotate-[-8deg]
-        "
-        style={{
+          "
+          style={{
             backgroundImage: "url('/envelope/fondo_footer.png')",
-            backgroundPosition: "right",
-        }}
-        >
+          }}
+        />
 
         {/* OVERLAY */}
-        <div className="absolute inset-0 bg-white/30" />
+        <div className="absolute inset-0 bg-white/30 z-10" />
       </div>
 
       {/* ===================================================
@@ -108,7 +117,7 @@ export default function FooterSection() {
           flex-col
           items-center
           justify-center
-          h-full
+          min-h-screen
           text-center
           px-4
         "
