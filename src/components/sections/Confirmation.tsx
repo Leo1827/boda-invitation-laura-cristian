@@ -6,20 +6,17 @@ export default function Confirmation() {
   const whatsappNumber = "573118557692"; // TU NÚMERO
 
   const handleWhatsAppConfirm = () => {
-    if (!name.trim()) return;
-
     const message = `
-      Hola ✨
-      Hola deseo confirmar mi asistencia.
-      Será un honor acompañarlos en este día tan especial 🤍
-        `;
+  Hola ✨
+
+  Deseo confirmar mi asistencia.
+  Será un honor acompañarlos en este día tan especial 🤍
+    `;
 
     const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 
     window.open(url, "_blank");
   };
-
-  const [name, setName] = useState("");
 
   /* =====================================================
      ENVIAR CONFIRMACIÓN
@@ -147,21 +144,20 @@ export default function Confirmation() {
              FORMULARIO
           ================================================= */}
           <div className="mt-6 flex flex-col items-center gap-5">
-
+            
             {/* BOTÓN */}
             <button
               onClick={handleWhatsAppConfirm}
-              disabled={!name.trim()}
               className="
                 group
                 relative
                 overflow-hidden
                 bg-[#bfa880]
                 hover:bg-[#a88f6c]
-                disabled:bg-white/20
-                disabled:border
-                disabled:border-white/10
-                disabled:text-white/80
+                bg-white/20
+                border
+              border-white/30
+                text-white/60
                 text-black
                 px-10
                 py-4
