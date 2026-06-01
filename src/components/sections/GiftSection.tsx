@@ -237,11 +237,7 @@ export default function GiftSection() {
                       font-[family-name:var(--font-cormorant)]
                     "
                   >
-                    Valoramos el esfuerzo y el cariño que implica
-                    acompañarnos hasta este lugar tan especial.
-                    <br />
-                    <br />
-                    Por eso, su presencia será el mejor regalo.
+                    Lluvia de sobres
                   </p>
                 </motion.div>
               </motion.div>
