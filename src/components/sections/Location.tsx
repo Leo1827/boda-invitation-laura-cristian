@@ -190,7 +190,7 @@ export default function Location() {
               </h3>
 
               <p className="text-sm md:text-lg opacity-90">
-                Playa Valle de los Cangrejos
+                GUAJIRA BEACH HOSTEL LA CACHACA 2, Cachaco
               </p>
 
               {/* 
@@ -301,13 +301,14 @@ export default function Location() {
 
               {/* GOOGLE MAPS */}
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d114638.77882328567!2d-72.85021876778923!3d11.591005037238732!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTHCsDMzJzQyLjAiTiA3MsKwNTMnMjMuMiJX!5e1!3m2!1ses-419!2sco!4v1779407008625!5m2!1ses-419!2sco"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d49540.19412809223!2d-72.97176718960232!3d11.538975332306961!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e8b63e98fe2459b%3A0x3f3e33296017ba39!2sGUAJIRA%20BEACH%20RIOHACHA!5e1!3m2!1ses-419!2sco!4v1781042627125!5m2!1ses-419!2sco"
                 className="w-full h-[75vh]"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               />
+              
             </div>
           </div>,
           document.body
